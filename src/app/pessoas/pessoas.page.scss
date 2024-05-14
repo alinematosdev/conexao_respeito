@@ -48,12 +48,33 @@ h1, p {
   }
 
   .student-name h1 {
-    margin: 32px 5px auto;
+    margin: 38px 5px auto;
     font-size: 15px;
     font-weight: 600;
     left: 2px;
     padding: 5px;
     position: absolute;
+  }
+
+  .start-assessment button {
+    background-color: #9364F6;
+    border: 2px solid #9364F6;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 38px;
+    margin-right: 20px;
+    padding: 6px;
+    position: absolute;
+    right: 10px;
+    width: 70px;
+  }
+
+  #dateInput {
+    background-color: #9c81a3;
+    color: #333333;
+    display: none;
   }
 
 

@@ -3,6 +3,7 @@ import { TabsPage } from './tabs.page';
 import { CadastroPage } from '../cadastro/cadastro.page';
 import { LoginPage } from '../login/login.page';
 import { AdicionarAtividadePage } from '../adicionar-atividade/adicionar-atividade.page';
+import { AdicionarMaterialPage } from '../adicionar-material/adicionar-material.page';
 import { CadastroEstudantePage } from '../cadastro-estudante/cadastro-estudante.page';
 import { CadastroProfessorPage } from '../cadastro-professor/cadastro-professor.page';
 import { CadastroResponsavelPage } from '../cadastro-responsavel/cadastro-responsavel.page';
@@ -41,7 +42,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/tabs/home',
     pathMatch: 'full',
   },
 
@@ -83,6 +84,13 @@ export const routes: Routes = [
   {
     path: 'atividades/adicionaratividade',
     component: AdicionarAtividadePage,
+    children: [
+    ]
+  },
+
+  {
+    path: 'materiais/adicionarmaterial',
+    component: AdicionarMaterialPage,
     children: [
     ]
   },
