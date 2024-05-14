@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { CadastroPage } from '../cadastro/cadastro.page';
-import { LoginComponent } from '../login/login.page';
+import { LoginPage } from '../login/login.page';
 import { AdicionarAtividadePage } from '../adicionar-atividade/adicionar-atividade.page';
 import { CadastroEstudantePage } from '../cadastro-estudante/cadastro-estudante.page';
 import { CadastroProfessorPage } from '../cadastro-professor/cadastro-professor.page';
@@ -47,7 +47,7 @@ export const routes: Routes = [
 
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginPage,
     children: [
     ]
   },

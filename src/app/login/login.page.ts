@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 })
 
-export class LoginComponent {
+export class LoginPage {
 
   constructor(private router: Router) { }
 
@@ -18,3 +18,4 @@ export class LoginComponent {
   }
 
 }
+
