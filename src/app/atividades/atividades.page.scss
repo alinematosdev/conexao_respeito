@@ -1,0 +1,156 @@
+ion-content{
+  --ion-background-color: linear-gradient(to bottom, #9465f8, #9465f8, #9465f8, #9465f8, #9465f8, #8f63f8, #8960f8, #835ef8, #755af8, #6455f8, #5052f9, #344ef9);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+h1, p {
+  font-family: "Outfit", sans-serif;;
+  font-weight: 500;
+}
+
+.page-title {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 28px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 600;
+  }
+
+.status-container {
+    margin: 50px auto auto 20px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    width: 280px;
+    height: 50px;
+    font-size: 11px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    position: relative;
+  }
+
+  .add-container button {
+    margin: 50px auto auto 20px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: inline-flex;
+    width: 250px;
+    height: 50px;
+    font-size: 13px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
+
+  .add-container ion-icon {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 4px;
+  }
+
+  .activities-container {
+    width: 90%;
+    height: 65%;
+    background-color: rgb(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 30px 5% 40px 5%;
+    border: 20px;
+    display: inline-block;
+    overflow: scroll;
+  }
+
+  .activity-box {
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px 15px 20px 15px;
+    width: 91%;
+    height: 100px;
+    position: relative;
+  }
+
+  .activity-title h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    left: 2px;
+    padding: 5px;
+    position: absolute;
+  }
+
+  .activity-description {
+    //background-color: yellow;
+    margin-top: 32px;
+    left: 2px;
+    width: 220px;
+    height: 65px;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    padding: 5px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .activity-status p {
+    text-align: center;
+    background: none;
+    border: 2px solid #1400FF;
+    color: #1400FF;
+    //border: 2px solid #1CA706;
+    //color: #1CA706;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 2px;
+    position: absolute;
+    right: 10px;
+    width: 70px;
+  }
+
+  .start-activity button {
+    background: none;
+    border: 2px solid #1400FF;
+    color: #1400FF;
+    //border: 2px solid #1CA706;
+    //color: #1CA706;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 45px;
+    padding: 2px;
+    position: absolute;
+    right: 10px;
+    width: 70px;
+  }
+
+  .activity-description p {
+    margin: 0px;
+  }
+
+  .activity-date {
+    //background-color: red;
+    right: 6px;
+    bottom: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+  }
+
+  .activity-date p{
+    margin: 0;
+  }
+
+  #red-text {
+    color: #FFB1B1;
+  }
+
+  @media (max-width: 375px) {
+    .activity-description {
+      width: 200px;
+    }
+  }

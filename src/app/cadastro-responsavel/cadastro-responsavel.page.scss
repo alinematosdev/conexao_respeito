@@ -1,0 +1,106 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 441px;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+
+.cadastro {
+    margin-top: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cadastro h1 {
+    font-size: 32px;
+    margin-bottom: 23px;
+    font-weight: bold;
+
+}
+
+.cadastro p {
+    text-align: center;
+    margin-right: 60px;
+    margin-left: 74px;
+    margin-bottom: 57px;
+}
+
+.form-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="date"]::before {
+    content: "Data de Nascimento";
+    color: #999;
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+    width: 392px;
+    height: 59px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 22px;
+    background-color: #E3E3E3;
+}
+
+.login-button,
+.enviar-form-button {
+    font-size: 20px;
+    font-weight: bold;
+    width: 392px;
+    height: 59px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 22px;
+}
+
+.login-button {
+    background-color: #9465F8;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.enviar-form-button  {
+    background-color: #9465F8;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+
+footer {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    width: 100%;    
+    margin-top: auto;
+    text-align: center;
+    font-size: 12px;
+    background-color: #f4effd;
+    padding: 10px 0;
+}
+
+
+@media screen and (max-width: 441px) {
+    h1 {
+        margin-top: 25px;
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}

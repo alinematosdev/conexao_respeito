@@ -1,0 +1,25 @@
+ion-content{
+  --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  margin-top: 160px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #9465f8;
+  margin-top: 20px;
+}
+
+ion-tab-bar {
+  background-color: white;
+}

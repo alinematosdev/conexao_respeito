@@ -1,0 +1,59 @@
+ion-content{
+  --ion-background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+h1, p {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+  h1 {
+  color: #333333;
+  margin-top: 87px;
+  margin-left: 30px;
+  font-size: 28px;
+  }
+
+  h2 {
+  color: #9465f8;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  }
+
+  .students-container {
+    width: 90%;
+    height: 65%;
+    background-color: rgb(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 30px 5% 40px 5%;
+    border: 20px;
+    display: inline-block;
+    position: relative;
+    overflow: scroll;
+  }
+
+  .student-box {
+    //color: black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px 15px 20px 15px;
+    width: 91%;
+    height: 100px;
+    position: relative;
+  }
+
+  .student-name h1 {
+    margin: 32px 5px auto;
+    font-size: 15px;
+    font-weight: 600;
+    left: 2px;
+    padding: 5px;
+    position: absolute;
+  }
+
+

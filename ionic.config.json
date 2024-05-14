@@ -1,0 +1,7 @@
+{
+  "name": "Conexao Respeito",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

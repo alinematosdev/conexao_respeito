@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <!--<ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>-->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="status-container">
+    <p>
+      Status do aluno: <span id="red-text">Em avaliação </span>Até 10/06/2024.
+    </p>
+  </div>
+
+   <!--Botão de adicionar atividades, visível apenas para professores.-->
+
+   <!--<div class="add-container">
+    <button (click)="onClick('/atividades/adicionaratividade')">
+      <span class="button_text">Adicionar atividade</span>
+      <span class="button_icon"><ion-icon name="duplicate-outline"></ion-icon></span>
+    </button>
+  </div>-->
+
+  <h1 class="page-title">Atividades</h1>
+
+  <div class="activities-container">
+
+    <div class="activity-box">
+      <div class="activity-title">
+        <h1>#Lei 14.811/2024</h1>
+      </div>
+      <div class="activity-description">
+        <p>Descrição da atividade: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="activity-date">
+        <p>Até 05/06/2024</p>
+      </div>
+      <div class="activity-status">
+        <p>A fazer</p>
+      </div>
+      <div class="start-activity">
+        <button (click)="onClick('/atividades/adicionaratividade')">Iniciar</button>
+      </div>
+    </div>
+    <div class="activity-box"></div>
+    <div class="activity-box"></div>
+    <div class="activity-box"></div>
+    <div class="activity-box"></div>
+    <div class="activity-box"></div>
+
+  </div>
+
+  <!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>-->
+</ion-content>
