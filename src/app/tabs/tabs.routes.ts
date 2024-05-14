@@ -34,14 +34,14 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/login',
+        redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/cadastro',
     pathMatch: 'full',
   },
 
