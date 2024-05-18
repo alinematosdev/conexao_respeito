@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { addCircleOutline, duplicateOutline, heart } from 'ionicons/icons';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
 import { IonCol, IonRow } from '@ionic/angular';
 
 @Component({

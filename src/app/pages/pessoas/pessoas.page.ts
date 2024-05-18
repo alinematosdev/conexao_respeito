@@ -20,11 +20,18 @@ export class PessoasPage implements OnInit {
 
   }
 
-  onClick(id: string){
-  if (document.getElementById(id)!.style.display === "none") {
-    document.getElementById(id)!.style.display = "block";
+  onClick(dateInput: string, dateSubmit: string){
+  if (document.getElementById(dateInput)!.style.display === "none") {
+    document.getElementById(dateInput)!.style.display = "block";
+    document.getElementById(dateSubmit)!.style.display = "block";
   } else {
-    document.getElementById(id)!.style.display = "none";
+    document.getElementById(dateInput)!.style.display = "none";
+    document.getElementById(dateSubmit)!.style.display = "none";
   }
+  }
+
+  iniciarAvaliacao(assessmentDate: string){
+    document.getElementById(assessmentDate)!.style.display = "block";
+    alert('teste');
   }
 }

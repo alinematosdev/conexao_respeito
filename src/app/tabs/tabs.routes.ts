@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { CadastroPage } from '../cadastro/cadastro.page';
-import { LoginPage } from '../login/login.page';
+import { CadastroPage } from '../pages/cadastro/cadastro.page';
+import { LoginPage } from '../pages/login/login.page';
 import { AdicionarAtividadePage } from '../adicionar-atividade/adicionar-atividade.page';
 import { AdicionarMaterialPage } from '../adicionar-material/adicionar-material.page';
 import { CadastroEstudantePage } from '../cadastro-estudante/cadastro-estudante.page';
@@ -16,17 +16,17 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () =>
-          import('../home/home.page').then((m) => m.HomePage),
+          import('../pages/home/home.page').then((m) => m.HomePage),
       },
       {
         path: 'materiais',
         loadComponent: () =>
-          import('../materiais/materiais.page').then((m) => m.MateriaisPage),
+          import('../pages/materiais/materiais.page').then((m) => m.MateriaisPage),
       },
       {
         path: 'atividades',
         loadComponent: () =>
-          import('../atividades/atividades.page').then((m) => m.AtividadesPage),
+          import('../pages/atividades/atividades.page').then((m) => m.AtividadesPage),
       },
       {
         path: 'pessoas',

@@ -56,6 +56,25 @@ h1, p {
     position: absolute;
   }
 
+  .start-assessment p {
+    color: red;
+    display: none;
+    font-size: 12px;
+    right: 20px;
+    position: absolute;
+  }
+
+  input[type="date"] {
+    background-color: #ffffff;
+    color: #333333;
+    color-scheme: dark;
+    display: none;
+    top: 70px;
+    right: 45px;
+    position: absolute;
+    width: 140px;
+  }
+
   .start-assessment button {
     background-color: #9364F6;
     border: 2px solid #9364F6;
@@ -71,10 +90,21 @@ h1, p {
     width: 70px;
   }
 
-  #dateInput {
-    background-color: #9c81a3;
-    color: #333333;
+  ::-webkit-calendar-picker-indicator {
+     background: #ffffff;
+    }
+
+    input[type="submit"]{
+    background-color: #d2cbd4;
+    //border: none;
+    color: #000000;
     display: none;
+    font-size: 13px;
+    font-weight: bold;
+    top: 69px;
+    right: 16px;
+    padding: 3px;
+    position: absolute;
   }
 
 

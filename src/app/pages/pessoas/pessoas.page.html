@@ -15,8 +15,13 @@
       <div class="student-name">
         <h1>Nome do Aluno</h1>
         <div class="start-assessment">
-          <button (click)="onClick('dateInput')">Avaliar</button>
-          <input id="dateInput" type="date"/>
+          <button (click)="onClick('dateInput','dateSubmit')">Avaliar</button>
+          <form onsubmit="return iniciarAvaliacao('assessmentDate')">
+            <p id="assessmentDate">Em avaliação até 20/06/2024</p>
+            <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" required/>
+            <input type="submit" name="dateSubmit" value="OK" id="dateSubmit">
+          </form>
+          <!--<input id="dateInput" type="text" name="dateInput" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="Data no formato dd/mm/yyyy"/>-->
         </div>
       </div>
     </div>
