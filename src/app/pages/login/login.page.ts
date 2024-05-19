@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ButtonComponent} from '../../components/button/button.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true
-
+  standalone: true,
+  imports: [ButtonComponent]
 })
 
 export class LoginPage {

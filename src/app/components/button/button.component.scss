@@ -1,0 +1,37 @@
+:host {
+  button {
+    font-size: 22px;
+    font-weight: bold;
+    width: 392px;
+    height: 59px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #9465F8;
+    color: #fff;
+  }
+}
+
+button[btnType="primary"] {
+  font-size: 22px;
+  font-weight: bold;
+  width: 392px;
+  height: 59px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #9465F8;
+  color: #fff;
+}
+
+button[btnMargin="top"] {
+  margin-top: 10px;
+}
+
+
+
+
+
+

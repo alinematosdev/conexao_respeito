@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-tab4',
+  selector: 'app-login',
   templateUrl: './pessoas.page.html',
   styleUrls: ['./pessoas.page.scss'],
   standalone: true,
@@ -15,7 +15,6 @@ export class PessoasPage implements OnInit {
   constructor() {
    }
 
-  //eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
 
   }

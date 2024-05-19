@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { CadastroPage } from '../pages/cadastro/cadastro.page';
 import { LoginPage } from '../pages/login/login.page';
-import { AdicionarAtividadePage } from '../adicionar-atividade/adicionar-atividade.page';
-import { AdicionarMaterialPage } from '../adicionar-material/adicionar-material.page';
-import { CadastroEstudantePage } from '../cadastro-estudante/cadastro-estudante.page';
-import { CadastroProfessorPage } from '../cadastro-professor/cadastro-professor.page';
-import { CadastroResponsavelPage } from '../cadastro-responsavel/cadastro-responsavel.page';
+import { AdicionarAtividadePage } from '../pages/adicionar-atividade/adicionar-atividade.page';
+import { AdicionarMaterialPage } from '../pages/adicionar-material/adicionar-material.page';
+import { CadastroEstudantePage } from '../pages/cadastro-estudante/cadastro-estudante.page';
+import { CadastroProfessorPage } from '../pages/cadastro-professor/cadastro-professor.page';
+import { CadastroResponsavelPage } from '../pages/cadastro-responsavel/cadastro-responsavel.page';
 
 export const routes: Routes = [
   {
@@ -31,7 +31,7 @@ export const routes: Routes = [
       {
         path: 'pessoas',
         loadComponent: () =>
-          import('../pessoas/pessoas.page').then((m) => m.PessoasPage),
+          import('../pages/pessoas/pessoas.page').then((m) => m.PessoasPage),
       },
       {
         path: '',

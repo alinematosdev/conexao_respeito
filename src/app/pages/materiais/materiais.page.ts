@@ -7,7 +7,7 @@ import { ExploreContainerComponent } from '../../explore-container/explore-conta
 import { IonCol, IonRow } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab2',
+  selector: 'app-materiais',
   templateUrl: 'materiais.page.html',
   styleUrls: ['materiais.page.scss'],
   standalone: true,
