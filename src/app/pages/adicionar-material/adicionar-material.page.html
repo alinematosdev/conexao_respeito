@@ -1,13 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>adicionar-material</ion-title>
+    <ion-title class="ion-text-center">Adicionar Material</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">adicionar-material</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form>
+    <div class="form-group">
+      <label for="material-media">Endereço de vídeo ou imagem</label>
+      <input class="inputFile" type="text" id="material-media" name="material-media" placeholder="Endereço de vídeo/imagem">
+      <label for="material-title">Título do material</label>
+      <input class="inputFile" type="text" id="material-title" name="material-title" placeholder="Título do material">
+      <label for="material-files">Material de apoio</label>
+      <input class="inputFile" type="file" id="material-files" name="material-files" accept=".pdf">
+    </div>
+  </form>
 </ion-content>
+

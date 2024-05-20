@@ -6,14 +6,11 @@ import { HostBinding } from '@angular/core';
   standalone: true,
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
-  host: {'class': 'register-button'}
+
 })
 export class ButtonComponent  implements OnInit {
 
-  @Input() btnType: 'primary' = 'primary';
-
-  @Input() btnMargin: 'top' = 'top';
+  @Input() btnType: 'primary' | 'secondary' | 'transparent' = 'primary';
 
   @Input() btnText: string = '';
 

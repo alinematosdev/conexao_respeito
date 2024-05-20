@@ -53,6 +53,10 @@ ion-tab-bar{
   bottom: 35px;
  }
 
+ ion-header {
+  --background: #9465f8;
+ }
+
  .tab-bar-button {
   align-items: center;
   border: none;
@@ -94,4 +98,11 @@ ion-tab-bar{
   .materials-container{
 
   }
+
+footer p {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
+
+}
+

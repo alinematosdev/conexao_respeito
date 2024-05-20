@@ -3,6 +3,7 @@
     font-size: 22px;
     font-weight: bold;
     width: 392px;
+    max-width: 392px;
     height: 59px;
     padding: 10px;
     border: none;
@@ -16,7 +17,8 @@
 button[btnType="primary"] {
   font-size: 22px;
   font-weight: bold;
-  width: 392px;
+  width: 85%;
+  max-width: 392px;
   height: 59px;
   padding: 10px;
   border: none;
@@ -24,10 +26,22 @@ button[btnType="primary"] {
   cursor: pointer;
   background-color: #9465F8;
   color: #fff;
+  margin: 3% 10% 3% 10%;
 }
 
-button[btnMargin="top"] {
-  margin-top: 10px;
+button[btnType="secondary"] {
+  font-size: 18px;
+  font-weight: bold;
+  width: 360px;
+  max-width: 360px;
+  height: 55px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #9465F8;
+  color: #fff;
+  margin: 0.5% 10% 5% 10%;
 }
 
 
