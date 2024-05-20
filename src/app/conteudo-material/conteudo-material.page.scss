@@ -1,0 +1,102 @@
+//pagina
+ion-content{
+    --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+  }
+//onde vai ficar localizado o video
+  .image-container {
+    width: 95%;  /* Largura da div */
+    border: 2px dashed #ccc; /* Borda para indicar que a div está vazia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto; /* Centraliza a div no meio da página */
+    margin-top: 30px;
+    height: 250px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+//texto localizado abaixo do video
+.resumo-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+h1{
+    color: black;
+}
+p{
+    color:black
+}
+  
+
+//parte material de apoio
+.materialApoio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Cor de fundo branca */
+    color: black; /* Cor do texto preta */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 80%; /* Largura da div */
+    margin: auto; /* Centraliza a div no meio da página */
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1); /* Sombra ao redor da div */
+}
+
+.materialApoio h1 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    border-bottom: 2px solid black; /* Linha abaixo do título */
+    padding-bottom: 5px; /* Espaçamento abaixo da linha */
+}
+
+.materialApoio .links-container1,
+.materialApoio .links-container2 {
+    background-color: rgb(235, 229, 229);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento entre os itens */
+    width: 100px;
+    height: 50px;
+    border-radius: 20%;
+    
+}
+
+.materialApoio .links-container1::before,
+.materialApoio .links-container2::before {
+    content: "📁"; /* Ícone de pasta */
+    display: inline-block;
+    margin-right: 10px; /* Espaçamento à direita do ícone */
+}
+.materialApoioLink{
+    text-decoration: none; /* Remove o sublinhado */
+    color: black; /* Cor inicial do link */
+    transition: color 0.3s ease; /* Transição suave da cor */
+
+}
+
+.materialApoioLink:hover {
+    color: red; /* Cor do link quando o mouse está sobre ele */
+}
+
+//header da pagina
+
+ion-header {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Altera a cor de fundo do cabeçalho */
+ion-toolbar {
+    background-color: #333; /* Cor de fundo escura */
+    color: white; /* Cor do texto branca */
+}

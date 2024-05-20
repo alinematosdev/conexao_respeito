@@ -7,6 +7,7 @@ import { AdicionarMaterialPage } from '../pages/adicionar-material/adicionar-mat
 import { CadastroEstudantePage } from '../pages/cadastro-estudante/cadastro-estudante.page';
 import { CadastroProfessorPage } from '../pages/cadastro-professor/cadastro-professor.page';
 import { CadastroResponsavelPage } from '../pages/cadastro-responsavel/cadastro-responsavel.page';
+import { ConteudoMaterialPage } from '../conteudo-material/conteudo-material.page';
 
 export const routes: Routes = [
   {
@@ -92,6 +93,12 @@ export const routes: Routes = [
     path: 'materiais/adicionarmaterial',
     component: AdicionarMaterialPage,
     children: [
+    ]
+  },
+  {
+    path: 'conteudo-material',
+    component: ConteudoMaterialPage,
+    children:[
     ]
   },
 ];
