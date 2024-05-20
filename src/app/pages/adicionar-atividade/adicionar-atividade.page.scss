@@ -1,0 +1,34 @@
+ion-content{
+  --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+}
+
+ion-toolbar {
+  --background: #746896;
+  --border-color: #746896;
+}
+
+.form-group {
+  color: #262527;
+  margin: 20% auto;
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.inputFile {
+  font-size: 15px;
+}
+
+#atividade-title, #atividade-files, #atividade-media {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  //color: transparent;
+}
+
+#atividade-files {
+  font-size: 11px;
+}
