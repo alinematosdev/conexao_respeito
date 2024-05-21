@@ -7,6 +7,9 @@ import { AdicionarMaterialPage } from '../pages/adicionar-material/adicionar-mat
 import { CadastroEstudantePage } from '../pages/cadastro-estudante/cadastro-estudante.page';
 import { CadastroProfessorPage } from '../pages/cadastro-professor/cadastro-professor.page';
 import { CadastroResponsavelPage } from '../pages/cadastro-responsavel/cadastro-responsavel.page';
+import { DenunciaPage } from '../pages/denuncia/denuncia.page';
+import { ConteudoAtividadePage } from '../pages/conteudo-atividade/conteudo-atividade.page';
+import { ConteudoMaterialPage } from '../pages/conteudo-material/conteudo-material.page';
 
 export const routes: Routes = [
   {
@@ -94,4 +97,24 @@ export const routes: Routes = [
     children: [
     ]
   },
+
+  {
+    path: 'denuncia',
+    component: DenunciaPage,
+    children: [
+    ]
+  },
+  {
+    path: 'atividades/conteudoatividade',
+    component: ConteudoAtividadePage,
+    children: [
+    ]
+  },
+  {
+    path: 'materiais/conteudomaterial',
+    component: ConteudoMaterialPage,
+    children: [
+    ]
+  },
+
 ];

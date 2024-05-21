@@ -1,0 +1,78 @@
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fcf8ff;
+  text-align: center;
+  margin-top: 50px;
+}
+
+ion-title {
+  font-size: 18px;
+}
+
+ion-content{
+  --ion-background-color: linear-gradient(to bottom, #9465f8, #9465f8, #9465f8, #9465f8, #9465f8, #8f63f8, #8960f8, #835ef8, #755af8, #6455f8, #5052f9, #344ef9);
+}
+
+ion-toolbar {
+  --background: #746896;
+  --border-color: #746896;
+}
+
+.title-container {
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+}
+
+.form-group {
+  color: #ffffff;
+  margin: 20% auto;
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.inputFile {
+  font-size: 15px;
+}
+
+ #atividade-files {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  //color: transparent;
+}
+
+#atividade-files {
+  font-size: 11px;
+}
+
+.materialApoio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.materialApoio .links-container1,
+.materialApoio .links-container2 {
+  background-color: rgb(235, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+  width: 200px;
+  height: 50px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.materialApoio a {
+  color: #262527;
+}
