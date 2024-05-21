@@ -3,24 +3,32 @@ ion-content{
     --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
   }
 //onde vai ficar localizado o video
-  .image-container {
-    width: 95%;  /* Largura da div */
-    border: 2px dashed #ccc; /* Borda para indicar que a div está vazia */
+  .video-container {
+
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mantém a proporção de aspecto do vídeo 16:9 */
+    border: 2px dashed #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     box-sizing: border-box;
-    margin: auto; /* Centraliza a div no meio da página */
+    margin: auto;
     margin-top: 30px;
-    height: 250px;
+    
+}
+  .video-container iframe {
+    
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-}
+
+
 //texto localizado abaixo do video
 .resumo-video {
     display: flex;
@@ -64,17 +72,21 @@ p{
     display: flex;
     align-items: center;
     margin-bottom: 20px; /* Espaçamento entre os itens */
-    width: 100px;
+    width: 200px;
     height: 50px;
-    border-radius: 20%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     
 }
 
 .materialApoio .links-container1::before,
 .materialApoio .links-container2::before {
     content: "📁"; /* Ícone de pasta */
+    text-align: right;
     display: inline-block;
-    margin-right: 10px; /* Espaçamento à direita do ícone */
+    margin-right: 50px; /* Espaçamento à direita do ícone */
 }
 .materialApoioLink{
     text-decoration: none; /* Remove o sublinhado */
@@ -86,17 +98,11 @@ p{
 .materialApoioLink:hover {
     color: red; /* Cor do link quando o mouse está sobre ele */
 }
-
-//header da pagina
-
-ion-header {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+//footer da pagina
+.fimDaPagina{
+    background-color:#F4EFFD ;
+    height: 3%;
 }
-
-/* Altera a cor de fundo do cabeçalho */
-ion-toolbar {
-    background-color: #333; /* Cor de fundo escura */
-    color: white; /* Cor do texto branca */
+footer p{
+    text-align: center;
 }
