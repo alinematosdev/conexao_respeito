@@ -27,8 +27,6 @@ interface Activity {
 
 export class AtividadesPage implements OnInit {
 
-  text_container: string = 'Adicionar atividade';
-
   activity: any = {
     //Mock status
     status: "A fazer"
