@@ -1,16 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+        <!--Botão de voltar-->
+        <div class="backButton">
+          <app-button btnType="back" (click)="goBack()"></app-button>
+        </div>
     <ion-title class="ion-text-center">Adicionar Atividade</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <form>
     <div class="form-group">
       <label for="atividade-title">Título da atividade</label>
       <input class="inputFile" type="text" id="atividade-title" name="atividade-title" placeholder="Título da atividade">
       <label for="atividade-files">Atividade</label>
       <input class="inputFile" type="file" id="atividade-files" name="atividade-files" accept=".pdf">
+      <div class="button-container">
+        <button (click)="onClick()">
+          <span class="button_text">Adicionar Atividade</span>
+        </button>
+      </div>
     </div>
   </form>
 </ion-content>

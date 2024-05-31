@@ -2,7 +2,8 @@
 ion-content{
   --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
 }
-//onde vai ficar localizado o video
+
+//Container do vídeo
 .video-container {
 
   position: relative;
@@ -18,6 +19,11 @@ ion-content{
   margin-top: 30px;
 
 }
+
+.backButton {
+  margin-top: 10px;
+}
+
 .video-container iframe {
 
    position: absolute;
@@ -27,8 +33,6 @@ ion-content{
   height: 100%;
 }
 
-
-
 //texto localizado abaixo do video
 .resumo-video {
   display: flex;
@@ -37,10 +41,17 @@ ion-content{
   justify-content: center;
   color: black;
 }
+
 h1{
+  font-family: 'Outfit', sans-serif;
   color: black;
 }
-p{
+
+.resumo-video p{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
   color:black
 }
 
@@ -98,11 +109,4 @@ p{
 .materialApoioLink:hover {
   color: red; /* Cor do link quando o mouse está sobre ele */
 }
-//footer da pagina
-.fimDaPagina{
-  background-color:#F4EFFD ;
-  height: 3%;
-}
-footer p{
-  text-align: center;
-}
+

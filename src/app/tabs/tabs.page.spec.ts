@@ -25,3 +25,5 @@ describe('TabsPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

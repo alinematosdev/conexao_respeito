@@ -1,13 +1,17 @@
 <ion-content [fullscreen]="true">
+  <!--Botão de voltar-->
+<div class="backButton">
+  <app-button btnType="back" (click)="goBack()"></app-button>
+</div>
+
   <div class="video-container">
-    <iframe  src="https://www.youtube.com/watch?v=BNhA-9AUrok&pp=ygVDdmlkZW8gYXVsYSBzb2JyZSBjb25zZXF1ZW5jaWFzIGxlZ2FpcyByZWxhY2lvbmFkYXMgYW8gY3liZXJidWxseWluZw%3D%3D"
-     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/BNhA-9AUrok?si=lpRq7maHt7nxxBtC" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   </div>
-  <div clas="resumo-video">
-    <h1>RESUMO DO VIDEO</h1>
+  <div class="resumo-video">
+    <h1>RESUMO</h1>
     <p>O vídeo é sobre “Bullying e CyberBullying” e foi apresentado no Fórum Educadores em Campo Grande/MS em 29/04/20191.
        O vídeo oferece dicas valiosas para lidar com o bullying e cyberbullying1.
         Ele discute como a família pode “blindar” um pré-adolescente do bullying1.

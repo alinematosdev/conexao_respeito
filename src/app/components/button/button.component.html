@@ -1,3 +1,11 @@
 <button [attr.btnType]="btnType">
+  <ng-container *ngIf="btnType === 'back'">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ng-container>
+  <ng-container *ngIf="btnType === 'complaint'">
+    <div>
+      <ion-icon name="alert-circle-outline"></ion-icon>
+    </div>
+  </ng-container>
   {{ btnText }}
 </button>

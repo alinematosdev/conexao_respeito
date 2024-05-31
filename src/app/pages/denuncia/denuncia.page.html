@@ -1,38 +1,42 @@
 <ion-content>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <button type="button" class = "botaoVoltar">
-    v
-  </button>
+  <!--Botão de voltar-->
+  <div class="backButton">
+    <app-button btnType="back" (click)="goBack()"></app-button>
+  </div>
 
-
-<form class="form-denuncia" action="">
-  <div class="input-field">
-    <label for="instituição">Instituição</label>
-    <input class="matricula" type="text" placeholder="Digite Aqui...">
-</div>
-<div class="input-field">
-  <label for="matricula">Matrícula</label>
-  <input class="matricula" type="text" placeholder="Digite Aqui...">
-</div>
-<div class="input-field">
-  <label for="NomeAgressor">Nome do agressor</label>
-  <input class="matricula" type="text" placeholder="Digite Aqui...">
-</div>
-<div class="input-field">
-  <label for="ondeOcorreuViolencia">Onde ocorreu a violência?</label>
-  <input class="matricula" type="text" placeholder="Digite Aqui...">
-</div>
-<div class="input-field">
-  <label for="MotivoDenuncia">Motivo da denúncia</label>
-  <input class="matricula" type="text" placeholder="Digite Aqui...">
-</div>
-</form>
+  <form class="form-denuncia" action="">
+    <div class="inputs-div">
+      <div class="input-field">
+        <label id="instituicao" for="instituição">Instituição</label>
+        <input type="text" placeholder="Digite Aqui...">
+      </div>
+      <div class="input-field">
+        <label id="matricula" for="matricula">Matrícula</label>
+        <input type="text" placeholder="Digite Aqui...">
+      </div>
+      <div class="input-field">
+        <label id="nomeagressor" for="NomeAgressor">Nome do agressor</label>
+        <input type="text" placeholder="Digite Aqui...">
+      </div>
+      <div class="input-field">
+        <label id="localviolencia" for="ondeOcorreuViolencia">Onde ocorreu a violência?</label>
+        <input type="text" placeholder="Digite Aqui...">
+      </div>
+      <div class="input-field">
+        <label id="motivodenuncia"for="MotivoDenuncia">Motivo da denúncia</label>
+        <input type="text" placeholder="Digite Aqui...">
+      </div>
+    </div>
+  </form>
 
 <!--Estilos em button.component.scss-->
 
 <div class="button-container">
   <app-button btnType="secondary" btnText="Denunciar"></app-button>
 </div>
+
+</ion-content>
 
 

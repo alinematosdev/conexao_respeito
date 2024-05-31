@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Location } from '@angular/common';
+import { IonContent, IonHeader, IonTabButton, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ButtonComponent} from '../../components/button/button.component';
 
 @Component({
@@ -9,11 +10,17 @@ import { ButtonComponent} from '../../components/button/button.component';
   templateUrl: './denuncia.page.html',
   styleUrls: ['./denuncia.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ButtonComponent]
+  imports: [IonContent, IonTabButton, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ButtonComponent]
 })
 export class DenunciaPage implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) {
+   }
+
+   // Go to previous page
+   goBack() {
+    this.location.back();
+  }
 
   ngOnInit() {
   }

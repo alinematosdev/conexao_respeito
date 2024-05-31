@@ -15,9 +15,15 @@
       <div class="student-name">
         <h1>Nome do Aluno</h1>
         <div class="start-assessment">
-          <button (click)="onClick('dateInput','dateSubmit')">Avaliar</button>
-          <form onsubmit="return iniciarAvaliacao('assessmentDate')">
-            <p id="assessmentDate">Em avaliação até 20/06/2024</p>
+
+          <!--This button starts assessment-->
+          <button id ="avaliarButton" (click)="onClickAvaliar('dateInput','dateSubmit')">Avaliar</button>
+
+          <!--This button is hidden by default, it is shown once this assessment begins-->
+          <button id ="concluirButton" (click)="onClickConcluir()">Concluir</button>
+
+          <form (submit)="iniciarAvaliacao($event, 'assessmentDate')">
+            <p id="assessmentDate">Em avaliação até {{ submittedDate }}</p>
             <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" required/>
             <input type="submit" name="dateSubmit" value="OK" id="dateSubmit">
           </form>

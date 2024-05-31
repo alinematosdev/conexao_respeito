@@ -6,7 +6,7 @@
   </ion-toolbar>-->
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="atividades-content" [fullscreen]="true">
 
   <!--<div class="status-container">
     <p>
@@ -18,12 +18,16 @@
 
    <div class="add-container">
     <button (click)="onClick('/atividades/adicionaratividade')">
-      <span class="button_text">Adicionar atividade</span>
+      <span class="button_text">{{ text_container }}</span>
       <span class="button_icon"><ion-icon name="duplicate-outline"></ion-icon></span>
     </button>
   </div>
 
   <h1 class="page-title">Atividades</h1>
+
+  <div class="simple-stroke">
+    <hr>
+  </div>
 
   <div class="activities-container">
 
@@ -38,18 +42,13 @@
         <p>Até 05/06/2024</p>
       </div>
       <div class="activity-status">
-        <p>A fazer</p>
+        <p>{{ activity.status }}</p>
       </div>
       <div class="start-activity">
-        <button (click)="onClick('/atividades/adicionaratividade')">Iniciar</button>
+        <button (click)="onClick('/atividades/conteudoatividade')">Iniciar</button>
       </div>
+      <span class="delete-icon"><ion-icon name="trash-outline"></ion-icon></span>
     </div>
-    <div class="activity-box"></div>
-    <div class="activity-box"></div>
-    <div class="activity-box"></div>
-    <div class="activity-box"></div>
-    <div class="activity-box"></div>
-
   </div>
 
   <!--<ion-header collapse="condense">

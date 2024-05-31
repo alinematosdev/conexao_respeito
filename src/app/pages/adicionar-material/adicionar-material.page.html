@@ -1,5 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+        <!--Botão de voltar-->
+        <div class="backButton">
+          <app-button btnType="back" (click)="goBack()"></app-button>
+        </div>
     <ion-title class="ion-text-center">Adicionar Material</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,6 +17,11 @@
       <input class="inputFile" type="text" id="material-title" name="material-title" placeholder="Título do material">
       <label for="material-files">Material de apoio</label>
       <input class="inputFile" type="file" id="material-files" name="material-files" accept=".pdf">
+      <div class="button-container">
+        <button (click)="onClick()">
+          <span class="button_text">Adicionar Material</span>
+        </button>
+      </div>
     </div>
   </form>
 </ion-content>

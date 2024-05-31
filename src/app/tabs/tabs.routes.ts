@@ -111,6 +111,12 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'atividades/conteudoatividade/:id',
+    component: ConteudoAtividadePage,
+    children: [
+    ]
+  },
+  {
     path: 'materiais/conteudomaterial',
     component: ConteudoMaterialPage,
     children: [

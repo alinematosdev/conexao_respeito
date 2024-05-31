@@ -19,19 +19,13 @@ ion-toolbar {
   --border-color: #746896;
 }
 
-.title-container {
-  background-color: #ffffff;
-  position: absolute;
-  width: 100%;
-  top: 0px;
-}
-
 .form-group {
   color: #ffffff;
   margin: 20% auto;
   width: 60%;
-  position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
@@ -52,14 +46,14 @@ ion-toolbar {
   font-size: 11px;
 }
 
-.materialApoio {
+.atividadeApoio {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.materialApoio .links-container1,
-.materialApoio .links-container2 {
+.atividadeApoio .link-container {
   background-color: rgb(235, 229, 229);
   display: flex;
   align-items: center;
@@ -67,12 +61,21 @@ ion-toolbar {
   margin-bottom: 20px; /* Espaçamento entre os itens */
   width: 200px;
   height: 50px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px;
 }
 
-.materialApoio a {
+.submitButton {
+  background-color: rgb(235, 229, 229);
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.atividadeApoio a {
   color: #262527;
 }

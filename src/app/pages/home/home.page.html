@@ -6,8 +6,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="tab1">
-  <h1>Olá,</h1>
-  <h2>Usuário</h2>
+
+  <div class="button-container">
+    <label for="complaint">Reportar</label>
+    <app-button btnType = "complaint" (click)="goToDenuncia()"></app-button>
+  </div>
+
+    <div class="user-profile">
+      <div class="div-text">
+        <h1>Bem vindo</h1>
+        <h2>{{ usuario }}</h2>
+      </div>
+      <img src="assets\images\CartoonizeAvatar.png" alt="profile-image">
+    </div>
+    <div class="simple-stroke">
+      <hr>
+    </div>
+
   <!--<ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>

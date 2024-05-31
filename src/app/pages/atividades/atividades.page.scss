@@ -11,8 +11,10 @@ h1, p {
 }
 
 .page-title {
+  color: #ffffff;
   margin-top: 40px;
   margin-left: 30px;
+  margin-bottom: 0px;
   font-size: 28px;
   font-family: "Istok Web", sans-serif;
   font-weight: 600;
@@ -58,7 +60,7 @@ h1, p {
     height: 65%;
     background-color: rgb(0, 0, 0, 0.25);
     border-radius: 10px;
-    margin: 30px 5% 40px 5%;
+    margin: 22px 5% 40px 5%;
     border: 20px;
     display: inline-block;
     overflow: scroll;
@@ -143,6 +145,26 @@ h1, p {
 
   .activity-date p{
     margin: 0;
+  }
+
+  .delete-icon {
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
+  }
+
+  .simple-stroke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .simple-stroke hr {
+    width: 90%;
+    height: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(218, 157, 255, 0.5); /* X = 0, Y = 4, cor: #DA9DFF, blur = 4 */
   }
 
   #red-text {

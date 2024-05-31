@@ -44,6 +44,38 @@ button[btnType="secondary"] {
   margin: 0.5% auto; //10% 5% 10%;
 }
 
+button[btnType="back"] {
+  font-size: 25px;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  margin: auto auto auto 2%;
+}
+
+button[btnType="complaint"] {
+  font-size: 35px;
+  color: #0022ff;
+  width: 30px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.397);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  padding-top: 2px;
+}
+
+button[btnType="complaint"] ion-icon {
+  font-size: 42px;
+}
+
 
 
 

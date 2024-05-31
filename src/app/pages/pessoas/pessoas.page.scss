@@ -90,6 +90,10 @@ h1, p {
     width: 70px;
   }
 
+  #concluirButton {
+    display: none;
+  }
+
   ::-webkit-calendar-picker-indicator {
      background: #ffffff;
     }
