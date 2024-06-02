@@ -1,0 +1,15 @@
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff); /* Alterando para fundo branco */
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+}
+
+.page-title h1 {
+  font-size: 30px;
+  color: #ffffff;
+}

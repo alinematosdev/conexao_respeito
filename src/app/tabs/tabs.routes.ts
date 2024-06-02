@@ -10,6 +10,7 @@ import { CadastroResponsavelPage } from '../pages/cadastro-responsavel/cadastro-
 import { DenunciaPage } from '../pages/denuncia/denuncia.page';
 import { ConteudoAtividadePage } from '../pages/conteudo-atividade/conteudo-atividade.page';
 import { ConteudoMaterialPage } from '../pages/conteudo-material/conteudo-material.page';
+import { ConteudoDenunciaPage } from '../pages/conteudo-denuncia/conteudo-denuncia.page';
 
 export const routes: Routes = [
   {
@@ -119,6 +120,18 @@ export const routes: Routes = [
   {
     path: 'materiais/conteudomaterial',
     component: ConteudoMaterialPage,
+    children: [
+    ]
+  },
+  {
+    path: 'materiais/conteudomaterial/:id',
+    component: ConteudoMaterialPage,
+    children: [
+    ]
+  },
+  {
+    path: 'denuncia/conteudodenuncia',
+    component: ConteudoDenunciaPage,
     children: [
     ]
   },

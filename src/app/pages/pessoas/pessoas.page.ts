@@ -20,9 +20,7 @@ interface Student {
 })
 export class PessoasPage implements OnInit {
 
-  students: Student[] = []; // Use Activity interface for activities array
-  submittedDate: string = ''; // Variable to store the submitted date
-
+  submittedDate: string = ''; // Guarda o valor da data inserida.
 
   constructor(private AddBoxService: AddBoxService) {
    }
@@ -40,14 +38,14 @@ export class PessoasPage implements OnInit {
       });
   }
 
-  //Hide assessment date and show assessment button.
+  //Esconde a data de avaliação e retorna para visível o botão de avaliação.
   onClickConcluir(){
     document.getElementById('assessmentDate')!.style.display = "none";
     document.getElementById('avaliarButton')!.style.display = "block";
     document.getElementById('concluirButton')!.style.display = "none";
   }
 
-  //Display assessment date and show conclusion button.
+  //Disponibiliza o campo de inserir a data de avaliação.
   onClickAvaliar(dateInput: string, dateSubmit: string){
     if (document.getElementById(dateInput)!.style.display === "none") {
       document.getElementById(dateInput)!.style.display = "block";
@@ -58,17 +56,27 @@ export class PessoasPage implements OnInit {
     }
     }
 
+  //Torna visível a data de avaliação e botão de conclusão.
   iniciarAvaliacao(event: Event, assessmentDate: string){
+    //Remove o comportamento padrão após submit no formulário.
     event.preventDefault();
-    document.getElementById(assessmentDate)!.style.display = "block";
-    document.getElementById('avaliarButton')!.style.display = "none";
-    document.getElementById('dateInput')!.style.display = "none";
-    document.getElementById('dateSubmit')!.style.display = "none";
-    document.getElementById('concluirButton')!.style.display = "block";
-    const rawDate = (document.getElementById('dateInput') as HTMLInputElement).value;
-    const [year, month, day] = rawDate.split('-');
-    this.submittedDate = `${day}-${month}-${year}`;
-    alert('Date submitted: ' + this.submittedDate);
+
+    //Valida se a data está indefinida.
+    const dateInput = (document.getElementById('dateInput') as HTMLInputElement).value;
+    if (!dateInput) {
+      //Data está indefinida.
+      alert('Data inválida.');
+      return;
+    } else {
+      document.getElementById(assessmentDate)!.style.display = "block";
+      document.getElementById('avaliarButton')!.style.display = "none";
+      document.getElementById('dateInput')!.style.display = "none";
+      document.getElementById('dateSubmit')!.style.display = "none";
+      document.getElementById('concluirButton')!.style.display = "block";
+      const rawDate = (document.getElementById('dateInput') as HTMLInputElement).value;
+      const [year, month, day] = rawDate.split('-');
+      this.submittedDate = `${day}-${month}-${year}`;
+    }
   }
 
   createStudentBox(student: Student) {

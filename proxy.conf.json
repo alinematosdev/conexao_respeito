@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "http://193.203.174.161:8082/v1/bff/involved/student/registration1",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

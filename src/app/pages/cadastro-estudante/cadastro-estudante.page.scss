@@ -1,13 +1,23 @@
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin-left: 85px;
+  margin-right: 20px;
+  margin-bottom: 45px;
+}
+
 .container {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 441px;
+    width: 95%;
     margin: 0 auto;
     overflow-y: scroll;
 }
-
 
 .cadastro {
     margin-top: 600px;
@@ -19,7 +29,7 @@
     font-size: 32px;
     margin-bottom: 23px;
     font-weight: bold;
-
+    top: 50px;
 }
 
 .cadastro p {
@@ -29,8 +39,11 @@
     margin-bottom: 57px;
 }
 
+.form-inputs {
+  text-align: center;
+}
+
 .form-group {
-    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -43,28 +56,25 @@ input[type="text"],
 input[type="date"],
 input[type="email"],
 input[type="password"] {
-    width: 392px;
+    width: 75%;
+    max-width: 380px;
     height: 59px;
     padding: 10px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin-left: 22px;
     background-color: #E3E3E3;
 }
 
-footer {
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    width: 100%;
-    margin-top: auto;
-    text-align: center;
-    font-size: 12px;
-    background-color: #f4effd;
-    padding: 10px 0;
+@media screen and (max-width: 375px) {
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="password"] {
+      //width: 300px;
+      height: 50px;
+  }
 }
-
 
 @media screen and (max-width: 441px) {
     h1 {
