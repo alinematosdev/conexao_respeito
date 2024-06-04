@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { EnvironmentInjector, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonContent} from '@ionic/angular/standalone';
 import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
 import { ButtonComponent} from '../../components/button/button.component';
 
@@ -11,7 +12,7 @@ import { ButtonComponent} from '../../components/button/button.component';
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [ButtonComponent]
+  imports: [ButtonComponent, IonContent]
 })
 
 export class CadastroPage {

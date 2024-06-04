@@ -1,5 +1,7 @@
 import { DataApiService } from './../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 import { ButtonComponent} from '../../components/button/button.component';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +17,7 @@ export class CadastroEstudantePage implements OnInit {
 
   studentForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder) {
+  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private location: Location, private router: Router) {
       this.studentForm = this.fb.group({
         fullname: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
@@ -34,7 +36,6 @@ export class CadastroEstudantePage implements OnInit {
       });
    }
 
-  //eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
     //this.getData();
   }
@@ -51,15 +52,35 @@ export class CadastroEstudantePage implements OnInit {
       });
   }*/
 
+  formatDate(event: FocusEvent) {
+    const input = event.target as HTMLInputElement;
+    if (!input.value) {
+      input.type = 'text';
+      return;
+    }
+    const dateParts = input.value.split('/');
+    if (dateParts.length === 3) {
+      const [day, month, year] = dateParts;
+      input.value = `${day}-${month}-${year}`;
+    }
+    input.type = 'text';
+  }
+
+  onFocus(event: FocusEvent) {
+    const input = event.target as HTMLInputElement;
+    input.type = 'date';
+  }
+
   onSubmit() {
     if (this.studentForm.valid) {
       console.log('form valido');
       const formData = this.studentForm.value;
-      const url = 'http://193.203.174.161:8082/v1/bff/involved/student'; // Example URL, replace with your API URL
+      const url = 'http://193.203.174.161:8082/v1/bff/involved/student';
 
       this.dataApiService.postDataAPIService(url, formData).subscribe({
         next: (response) => {
           console.log('Form submitted successfully:', response);
+          this.location.back();
           // Handle successful response
         },
         error: (error) => {
@@ -68,11 +89,12 @@ export class CadastroEstudantePage implements OnInit {
         }
       });
     } else {
-      this.validateAllFormFields(this.studentForm); // Trigger validation on all fields
-      this.logValidationErrors(this.studentForm); // Log validation errors
+      this.validateAllFormFields(this.studentForm); // Chama a vaidação em todos os campos
+      this.logValidationErrors(this.studentForm); // Loga erros de validação
       console.error('Form is invalid');
     }
   }
+
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
@@ -95,4 +117,9 @@ export class CadastroEstudantePage implements OnInit {
       }
     });
   }
+
+  goToLogin() {
+    this.router.navigate(['/login']); // Navegue para a página de login ao clicar no botão
+  }
+
 }

@@ -1,3 +1,10 @@
+body {
+  background-color: aliceblue;
+  position: static;
+  color: black;
+  margin: 0px;
+}
+
 .buttons-container {
   display: flex;
   flex-direction: column;
@@ -9,27 +16,30 @@
   margin-bottom: 45px;
 }
 
+blockquote, cite {
+  color: #251f2b;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     overflow-y: scroll;
 }
 
 .cadastro {
-    margin-top: 600px;
-    text-align: center;
-    margin-bottom: 20px;
+  margin-top: 380px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .cadastro h1 {
     font-size: 32px;
     margin-bottom: 23px;
     font-weight: bold;
-    top: 50px;
 }
 
 .cadastro p {
@@ -56,7 +66,7 @@ input[type="text"],
 input[type="date"],
 input[type="email"],
 input[type="password"] {
-    width: 75%;
+    width: 74%;
     max-width: 380px;
     height: 59px;
     padding: 10px;
@@ -66,23 +76,34 @@ input[type="password"] {
     background-color: #E3E3E3;
 }
 
-@media screen and (max-width: 375px) {
-  input[type="text"],
-  input[type="date"],
-  input[type="email"],
-  input[type="password"] {
-      //width: 300px;
-      height: 50px;
+@media (max-height: 705px) {
+  h1 {
+      margin-top: 600px;
+      font-size: 20px;
   }
+
 }
 
-@media screen and (max-width: 441px) {
-    h1 {
-        margin-top: 25px;
-        font-size: 20px;
-    }
+@media (min-height: 706px) {
+  h1 {
+      margin-top: 300px;
+      font-size: 20px;
+  }
 
-    footer {
-        font-size: 12px;
-    }
+}
+
+@media screen and (min-height: 1000px) {
+  h1 {
+      margin-top: 250px;
+      font-size: 20px;
+  }
+
+}
+
+@media screen and (min-height: 1100px) {
+  h1 {
+      margin-top: 10px;
+      font-size: 20px;
+  }
+
 }

@@ -130,7 +130,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'denuncia/conteudodenuncia',
+    path: 'conteudodenuncia',
     component: ConteudoDenunciaPage,
     children: [
     ]

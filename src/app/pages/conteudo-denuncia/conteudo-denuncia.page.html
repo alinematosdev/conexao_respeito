@@ -1,5 +1,46 @@
 <ion-content [fullscreen]="true">
+    <!--Botão de voltar-->
+    <div class="backButton">
+      <app-button btnType="back" (click)="goBack()"></app-button>
+    </div>
+
   <div class="page-title">
     <h1>Denúncias</h1>
+  </div>
+  <div class="complaints-container">
+
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+
+        <div class="button-container">
+        <!--Botão para verificar a denúncia-->
+          <button id ="complaintButton" (click)="mostrarDenuncia()">Verificar</button>
+        </div>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+    <div class="complaint-box">
+      <p>Nome do aluno</p>
+    </div>
+
   </div>
 </ion-content>

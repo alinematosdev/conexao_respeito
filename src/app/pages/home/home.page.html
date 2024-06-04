@@ -7,8 +7,15 @@
 
 <ion-content [fullscreen]="true" class="tab1">
 
+  <div class="teacher-button-container">
+    <label>Denúncias</label>
+    <button (click)="goToConteudoDenuncia()">
+      <ion-icon name="document-text" class="check-complaint-icon"></ion-icon>
+      <ion-icon name="document-text" class="check-complaint-icon-shadow"></ion-icon>
+    </button>
+  </div>
   <div class="button-container">
-    <label for="complaint">Reportar</label>
+    <label>Reportar</label>
     <app-button btnType = "complaint" (click)="goToDenuncia()"></app-button>
   </div>
 

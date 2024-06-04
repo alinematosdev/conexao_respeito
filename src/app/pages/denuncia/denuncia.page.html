@@ -6,36 +6,37 @@
     <app-button btnType="back" (click)="goBack()"></app-button>
   </div>
 
-  <form class="form-denuncia" action="">
+  <form method="POST" [formGroup]="complaintForm" (ngSubmit)="onSubmit()" class="form-denuncia" action="">
     <div class="inputs-div">
       <div class="input-field">
-        <label id="instituicao" for="instituição">Instituição</label>
-        <input type="text" placeholder="Digite Aqui...">
+        <label id="instituicao_" for="instituicao">Instituição</label>
+        <input formControlName="educationalInstitution" id="instituicao" type="text" placeholder="Digite Aqui...">
       </div>
       <div class="input-field">
-        <label id="matricula" for="matricula">Matrícula</label>
-        <input type="text" placeholder="Digite Aqui...">
+        <label id="matricula_" for="matricula">Matrícula</label>
+        <input formControlName="nameAggressor" id="matricula" type="text" placeholder="Digite Aqui...">
       </div>
       <div class="input-field">
-        <label id="nomeagressor" for="NomeAgressor">Nome do agressor</label>
-        <input type="text" placeholder="Digite Aqui...">
+        <label id="nome-agressor" for="nomeagressor">Nome do agressor</label>
+        <input id="nomeagressor" type="text" placeholder="Digite Aqui...">
       </div>
       <div class="input-field">
-        <label id="localviolencia" for="ondeOcorreuViolencia">Onde ocorreu a violência?</label>
-        <input type="text" placeholder="Digite Aqui...">
+        <label id="local-violencia" for="localviolencia">Onde ocorreu a violência?</label>
+        <input formControlName="placeViolationOccurred" id="localviolencia" type="text" placeholder="Digite Aqui...">
       </div>
       <div class="input-field">
-        <label id="motivodenuncia"for="MotivoDenuncia">Motivo da denúncia</label>
-        <input class="motivodenuncia" type="text" placeholder="Digite Aqui...">
+        <label id="motivo-denuncia" for="motivodenuncia">Motivo da denúncia</label>
+        <input formControlName="complaintReason" id="motivodenuncia" class="motivodenuncia" type="text" placeholder="Digite Aqui...">
       </div>
     </div>
+
+    <!--Estilos em button.component.scss-->
+
+    <div class="button-container">
+      <app-button btnType="secondary" btnText="Denunciar" type="submit"></app-button>
+    </div>
+
   </form>
-
-<!--Estilos em button.component.scss-->
-
-<div class="button-container">
-  <app-button btnType="secondary" btnText="Denunciar"></app-button>
-</div>
 
 </ion-content>
 

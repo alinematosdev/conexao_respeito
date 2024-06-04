@@ -1,26 +1,33 @@
-<div class="container">
-  <div class="logo">
-    <img src="../../assets/images/LogoEquipe_PNG_Purple.png">
-    <h1>Cadastro</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam maecenas mi non sed ut odio. Non, justo, sed facilisi et. </p>
-    <p class="opcao">Escolha uma opção abaixo:</p>
-  </div>
-
-  <form>
-    <div class="form-group">
-      <select id="user-type" name="user-type" (change)="onChangeUserType()">
-        <option value="estudante">Estudante</option>
-        <option value="professor">Professor</option>
-        <option value="responsavel">Responsável</option>
-      </select>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="../../assets/images/LogoEquipe_PNG_Purple.png">
+      <h1>Cadastro</h1>
+      <blockquote>
+        "O sonho da igualdade só cresce no terreno do respeito pelas diferenças."
+      </blockquote>
+      <cite>- Augusto Cury</cite>
+      <p class="opcao">Escolha uma opção abaixo:</p>
     </div>
-    <!--<button type = "button" class="ok-button" (click)="goToCadastro()">OK</button>-->
 
-    <!--Estilos em button.component.scss-->
-    <app-button btnType="primary" btnText="OK" (click)="goToCadastro()"></app-button>
+    <form>
+      <div class="form-group">
+        <select id="user-type" name="user-type" (change)="onChangeUserType()">
+          <option value="estudante">Estudante</option>
+          <option value="professor">Professor</option>
+          <option value="responsavel">Responsável</option>
+        </select>
+      </div>
+      <!--<button type = "button" class="ok-button" (click)="goToCadastro()">OK</button>-->
 
-  </form>
-  <footer>
-    <p>© 2024 Conexão Respeito. Todos os direitos reservados.</p>
-  </footer>
-</div>
+      <!--Estilos em button.component.scss-->
+      <app-button btnType="primary" btnText="OK" (click)="goToCadastro()"></app-button>
+
+    </form>
+
+  </div>
+</body>
+
+<footer>
+  <p>© 2024 Conexão Respeito. Todos os direitos reservados.</p>
+</footer>

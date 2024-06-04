@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informações da Denúncia</ion-title>
+    <ion-button slot="end">
+      <ion-button (click)="close()"><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="complaint-info">
+    <ion-item>
+      <ion-label position="stacked">Instituição de ensino:</ion-label>
+      <ion-text>{{ educationalInstitution }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nome do agressor:</ion-label>
+      <ion-text>{{ nameAggressor }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Local da agressão:</ion-label>
+      <ion-text>{{ placeViolationOccurred }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Motivo da denúncia:</ion-label>
+      <ion-textarea auto-grow="true" readonly>{{ complaintReason }}</ion-textarea>
+    </ion-item>
+  </div>
+</ion-content>

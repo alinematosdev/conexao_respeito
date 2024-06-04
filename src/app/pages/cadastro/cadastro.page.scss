@@ -1,9 +1,15 @@
+body {
+  background-color: aliceblue;
+  color: #000000;
+}
+
 .container {
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 441px;
+    width: 90%;
     height: 915px;
     margin: 0 auto;
 }
@@ -26,11 +32,8 @@
 
 }
 
-.logo p {
-    text-align: center;
-    margin-right: 60px;
-    margin-left: 74px;
-    margin-bottom: 57px;
+blockquote, cite {
+  color: #251f2b;
 }
 
 .opcao {
@@ -47,21 +50,10 @@
 select {
     width: 280px;
     height: 40px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-footer {
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    width: 100%;
-    margin-top: auto;
-    text-align: center;
-    font-size: 12px;
-    background-color: #f4effd;
-    padding: 10px 0;
 }
 
 .loading-overlay {
@@ -90,6 +82,21 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+#user-type {
+  background-color: white;
+  border: solid 2.5px black;
+}
+
+#user-type:focus {
+  border: solid 2.5px #9465f8;
+}
+
+/* Estilo para quando a opção está focada/selecionada */
+#user-type option:focus {
+  background-color: #cf97fd;
+  color: black;
+}
 
 @media screen and (max-width: 441px) {
     h1 {

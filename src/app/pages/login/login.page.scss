@@ -1,3 +1,8 @@
+body {
+  background-color: aliceblue;
+  color: #000000;
+}
+
 .button-container {
   display: block;
   justify-content: center;
@@ -30,13 +35,11 @@
 .content h1 {
     font-size: 32px;
     margin-bottom: 23px;
+    color: #000000;
 }
 
-.content p {
-    text-align: center;
-    margin-right: 60px;
-    margin-left: 60px;
-    margin-bottom: 57px;
+blockquote, cite {
+  color: #251f2b;
 }
 
 h1 {
@@ -56,6 +59,7 @@ form {
 
 input[type="text"],
 input[type="password"] {
+    color: #000000;
     display:block;
     width: 85%;
     max-width: 372px;
@@ -65,6 +69,18 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f3f3f3;
+}
+
+.login-alert {
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  display: none;
+}
+
+.field-alert {
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  display: none;
 }
 
 .forgot-password {
