@@ -88,7 +88,7 @@ export class LoginPage implements OnInit {
           console.log('Phone Number:', phoneNumber);
           console.log('Postal Code:', postalCode);
 
-          //this.router.navigate(['/tabs/home']);
+          this.router.navigate(['/tabs/home']);
 
         },
         error: async (error) => {
