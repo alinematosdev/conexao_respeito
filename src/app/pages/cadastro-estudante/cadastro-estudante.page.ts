@@ -1,6 +1,5 @@
 import { DataApiService } from './../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ButtonComponent} from '../../components/button/button.component';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -10,14 +9,13 @@ import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } 
   templateUrl: './cadastro-estudante.page.html',
   styleUrls: ['./cadastro-estudante.page.scss'],
   standalone: true,
-  providers: [DataApiService],
   imports: [ButtonComponent, ReactiveFormsModule]
 })
 export class CadastroEstudantePage implements OnInit {
 
   studentForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private location: Location, private router: Router) {
+  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router) {
       this.studentForm = this.fb.group({
         fullname: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
@@ -80,7 +78,7 @@ export class CadastroEstudantePage implements OnInit {
       this.dataApiService.postDataAPIService(url, formData).subscribe({
         next: (response) => {
           console.log('Form submitted successfully:', response);
-          this.location.back();
+          this.router.navigate(['/login']);
           // Handle successful response
         },
         error: (error) => {

@@ -7,7 +7,7 @@
 
 <ion-content [fullscreen]="true" class="tab1">
 
-  <div class="teacher-button-container">
+  <div *ngIf="showCheckComplaints" id="check-complaints" class="teacher-button-container">
     <label>Denúncias</label>
     <button (click)="goToConteudoDenuncia()">
       <ion-icon name="document-text" class="check-complaint-icon"></ion-icon>

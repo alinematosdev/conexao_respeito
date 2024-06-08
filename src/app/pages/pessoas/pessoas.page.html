@@ -1,16 +1,16 @@
 <ion-content [fullscreen]="true">
 
   <h1>Alunos da Instituição</h1>
-  <h2>Nome da Instituição</h2>
+  <h2>{{educationalInstitution}}</h2>
 
   <div class="students-container">
 
-    <div class="student-box">
+    <div *ngFor="let student of studentsData" class="student-box">
       <div class="student-name">
-        <h1>Nome do Aluno</h1>
+        <h1>{{ student }}</h1>
         <div class="start-assessment">
           <!--Botão que inicia a avaliação-->
-          <button id ="avaliarButton" (click)="onClickAvaliar('dateInput','dateSubmit')">Avaliar</button>
+          <button *ngIf="showAvaliarButton" id ="avaliarButton" (click)="onClickAvaliar('dateInput','dateSubmit')">Avaliar</button>
 
           <!--Botão com display default setado para none. Aparece ao definir uma data de avaliação-->
           <button id ="concluirButton" (click)="onClickConcluir()">Concluir</button>
@@ -21,7 +21,6 @@
             <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" required/>
             <input type="submit" name="dateSubmit" value="OK" id="dateSubmit">
           </form>
-
         </div>
       </div>
     </div>
@@ -30,16 +29,6 @@
         <h1>Nome do Aluno</h1>
       </div>
     </div>
-    <div class="student-box">
-      <div class="student-name">
-        <h1>Nome do Aluno</h1>
-      </div>
-    </div>
-    <div class="student-box"></div>
-    <div class="student-box"></div>
-    <div class="student-box"></div>
-    <div class="student-box"></div>
-    <div class="student-box"></div>
 
   </div>
 

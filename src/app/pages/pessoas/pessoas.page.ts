@@ -1,8 +1,10 @@
-import { AddBoxService } from '../../services/addbox.service';
+import { UserDataService } from '../../services/user-data.service';
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataApiService } from './../../services/data-api.service';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { LoadingController } from '@ionic/angular';
 
 //Defines interface for pessoa
 interface Student {
@@ -16,26 +18,51 @@ interface Student {
   styleUrls: ['./pessoas.page.scss'],
   standalone: true,
   encapsulation: ViewEncapsulation.None,
+  providers: [DataApiService],
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class PessoasPage implements OnInit {
 
+  studentsData: any[] = [];
   submittedDate: string = ''; // Guarda o valor da data inserida.
+  educationalInstitution: string = ''; //Variável que define a instituição.
+  student: any;
+  showAvaliarButton: boolean = false;
 
-  constructor(private AddBoxService: AddBoxService) {
-   }
+  constructor(private userDataService: UserDataService, private dataApiService: DataApiService, private loadingController: LoadingController) {
+  }
 
   ngOnInit() {
+    if (this.userDataService.userType == 'teacher') {
+      this.showAvaliarButton = true;
+      } else if (this.userDataService.userType == 'student') {
+      this.showAvaliarButton = false;
+      } else if (this.userDataService.userType == 'responsible') {
+      this.showAvaliarButton = false;
+      } else {
+      this.showAvaliarButton = false;
+      }
 
-      console.log('Outside subscription');
-      this.AddBoxService.addBox$.subscribe({
-      next: () => {console.log('Inside subscription of student');
-      this.createStudentBox({
-        nome: "Example Title",
-        date: "28/05/2024"
-      });},
-      error: (error) => {console.error('Error in subscription:', error);},
-      });
+    console.log(this.userDataService.educationalInstitution);
+    this.educationalInstitution = this.userDataService.educationalInstitution;
+    this.fetchStudents();
+  }
+
+  async fetchStudents() {
+    const url = `http://193.203.174.161:8082/v1/bff/involved/student/educational-institution?educationalInstitution=${this.educationalInstitution}&size=10&page=0`;
+    // Pass educationalInstitution parameter for filtering
+    this.dataApiService.getDataAPIService(url).subscribe({
+      next: (data) => {
+        console.log('Students received successfully:', data);
+        this.studentsData = data.map((student: any) => student.fullname);
+        console.log('Full names:', this.studentsData);
+        // Handle successful response
+      },
+      error: (error) => {
+        console.error('Error fetching complaints:', error);
+        // Handle error
+      }
+    });
   }
 
   //Esconde a data de avaliação e retorna para visível o botão de avaliação.

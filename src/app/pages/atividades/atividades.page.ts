@@ -1,4 +1,6 @@
 import { AddBoxService } from '../../services/addbox.service';
+import { UserDataService } from '../../services/user-data.service';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
@@ -22,7 +24,7 @@ interface Activity {
   styleUrls: ['atividades.page.scss'],
   standalone: true,
   encapsulation: ViewEncapsulation.None,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, CommonModule],
 })
 
 export class AtividadesPage implements OnInit {
@@ -31,12 +33,29 @@ export class AtividadesPage implements OnInit {
     //Mock status
     status: "A fazer"
   };
+  containerMessage: string = '';
+  showIcon: boolean = false;
 
-  constructor(private router: Router, private AddBoxService: AddBoxService, private cdr: ChangeDetectorRef) {
+  constructor(private userDataService: UserDataService, private router: Router, private AddBoxService: AddBoxService, private cdr: ChangeDetectorRef) {
     addIcons({ addCircleOutline, heart, duplicateOutline, trashOutline });
   }
 
   ngOnInit() {
+
+    if (this.userDataService.userType == 'teacher') {
+      this.containerMessage = 'Adicionar Atividade';
+      this.showIcon = true;
+      } else if (this.userDataService.userType == 'student') {
+      this.containerMessage = 'Status do aluno: OK';
+      this.showIcon = false;
+      } else if (this.userDataService.userType == 'responsible') {
+      this.containerMessage = 'Status do aluno tutorado: OK';
+      this.showIcon = false;
+      } else {
+      this.containerMessage = 'Status do aluno: OK';
+      this.showIcon = false;
+      }
+
     this.AddBoxService.addBox$.subscribe({
     next: () => {
     this.createActivityBox({

@@ -12,8 +12,8 @@
 
   <div class="add-container">
     <button (click)="onClick('/materiais/adicionarmaterial')">
-      <span class="button_text">Adicionar material</span>
-      <span class="button_icon"><ion-icon name="duplicate-outline"></ion-icon></span>
+      <span class="button_text">{{containerMessage}}</span>
+      <span *ngIf="showIcon" class="button_icon"><ion-icon name="duplicate-outline"></ion-icon></span>
     </button>
   </div>
 

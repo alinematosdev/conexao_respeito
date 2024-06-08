@@ -5,42 +5,19 @@
     </div>
 
   <div class="page-title">
-    <h1>Denúncias</h1>
+    <h1>Denúncias - {{educationalInstitution}}</h1>
   </div>
   <div class="complaints-container">
 
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
+    <div *ngFor="let complaint of complaintsData" class="complaint-box">
+      <p>{{ complaint.nameAggressor }}</p>
 
         <div class="button-container">
         <!--Botão para verificar a denúncia-->
-          <button id ="complaintButton" (click)="mostrarDenuncia()">Verificar</button>
+          <button id ="complaintButton" (click)="mostrarDenuncia(complaint)">Verificar</button>
         </div>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
-    </div>
-    <div class="complaint-box">
-      <p>Nome do aluno</p>
     </div>
 
   </div>
+
 </ion-content>

@@ -1,12 +1,12 @@
 import { AddBoxService } from '../../services/addbox.service';
+import { UserDataService } from '../../services/user-data.service';
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { addCircleOutline, duplicateOutline, heart } from 'ionicons/icons';
 import { ButtonComponent} from '../../components/button/button.component';
-import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
-import { IonCol, IonRow } from '@ionic/angular';
 
 //Defines interface for material
 interface Material {
@@ -21,19 +21,35 @@ interface Material {
   styleUrls: ['materiais.page.scss'],
   standalone: true,
   encapsulation: ViewEncapsulation.None,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, ButtonComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, ButtonComponent, CommonModule],
 })
 
 export class MateriaisPage implements OnInit {
 
-  constructor(private router: Router, private AddBoxService: AddBoxService) {
+  containerMessage: string = '';
+  showIcon: boolean = false;
+
+  constructor(private userDataService: UserDataService, private router: Router, private AddBoxService: AddBoxService) {
     addIcons({ addCircleOutline, heart, duplicateOutline });
   }
 
   ngOnInit() {
-    console.log('Outside subscription');
+    if (this.userDataService.userType == 'teacher') {
+      this.containerMessage = 'Adicionar Material';
+      this.showIcon = true;
+      } else if (this.userDataService.userType == 'student') {
+      this.containerMessage = 'Status do aluno: OK';
+      this.showIcon = false;
+      } else if (this.userDataService.userType == 'responsible') {
+      this.containerMessage = 'Status do aluno tutorado: OK';
+      this.showIcon = false;
+      } else {
+      this.containerMessage = 'Status do aluno: OK';
+      this.showIcon = false;
+      }
+
     this.AddBoxService.addBox$.subscribe({
-    next: () => {console.log('Inside subscription of material');
+    next: () => {
     this.createMaterialBox({
       id: 123,
       title: "Example Title",

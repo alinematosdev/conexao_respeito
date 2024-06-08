@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class DataApiService {
 
   constructor(private httpClient: HttpClient) { }
-  getDataAPIService(url : string) {
+  getDataAPIService(url: string): Observable<any> {
+    //const params = { educationalInstitution: institution }; // Aceita instituição como filtro.
+    //return this.httpClient.get(url, { params });
     return this.httpClient.get(url);
   }
 

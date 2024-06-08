@@ -10,7 +10,6 @@ import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } 
   templateUrl: './cadastro-professor.page.html',
   styleUrls: ['./cadastro-professor.page.scss'],
   standalone: true,
-  providers: [DataApiService],
   imports: [ButtonComponent, ReactiveFormsModule, IonContent]
 })
 

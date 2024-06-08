@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } 
   templateUrl: './cadastro-responsavel.page.html',
   styleUrls: ['./cadastro-responsavel.page.scss'],
   standalone: true,
-  providers: [DataApiService],
   imports: [ButtonComponent, ReactiveFormsModule]
 })
 export class CadastroResponsavelPage implements OnInit {

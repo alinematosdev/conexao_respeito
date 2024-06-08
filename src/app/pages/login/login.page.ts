@@ -1,4 +1,5 @@
 import { DataApiService } from './../../services/data-api.service';
+import { UserDataService } from '../../services/user-data.service'
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent} from '../../components/button/button.component';
@@ -10,19 +11,22 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  providers: [DataApiService],
   imports: [ButtonComponent, ReactiveFormsModule]
 })
 
-export class LoginPage {
+export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router, private loadingController: LoadingController) {
+  constructor(private userDataService: UserDataService, private dataApiService: DataApiService, private fb: FormBuilder, private router: Router, private loadingController: LoadingController) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+  }
+
+  ngOnInit() {
+    this.userDataService.userType = '';
   }
 
   async onSubmit() {
@@ -40,16 +44,58 @@ export class LoginPage {
 
       this.dataApiService.postDataAPIService(url, formData).subscribe({
         next: async (response) => {
-          console.log('Form submitted successfully:', response);
+          //Handle successful response
+          (document.getElementsByClassName('login-alert')[0]as HTMLElement).style.display = "none";
           await loading.dismiss();
-          this.router.navigate(['/tabs/home']);
-          // Handle successful response
+
+          // Checar o tipo de usuário
+
+          if (response.hasOwnProperty('nameResponsible')) {
+            this.userDataService.userType = 'student';
+            this.userDataService.firstName = response.fullname.split(' ')[0];
+            this.userDataService.nameResponsible = response.nameResponsible;
+            this.userDataService.educationalInstitution = response.educationalInstitution;
+          } else if (response.hasOwnProperty('nameTutoredStudent')) {
+            this.userDataService.userType = 'responsible';
+            this.userDataService.firstName = response.fullname.split(' ')[0];
+            this.userDataService.nameTutoredStudent = response.nameTutoredStudent;
+            this.userDataService.educationalInstitution = response.educationalIntitution;
+          } else {
+            this.userDataService.userType = 'teacher';
+            this.userDataService.firstName = response.fullname.split(' ')[0];
+            this.userDataService.educationalInstitution = response.educationalIntitution;
+            console.log(response.educationalIntitution);
+          }
+
+          //Grava os dados do usuário
+          console.log(response);
+          const fullname = response.fullname;
+          const birthDate = response.birthDate;
+          const address = response.address;
+          const city = response.city;
+          const email = response.email;
+          const neighborhood = response.neighborhood;
+          const phoneNumber = response.phoneNumber;
+          const postalCode = response.postalCode;
+
+
+          console.log('Full Name:', fullname);
+          console.log('Birth Date:', birthDate);
+          console.log('Address:', address);
+          console.log('City:', city);
+          console.log('Email:', email);
+          console.log('Neighborhood:', neighborhood);
+          console.log('Phone Number:', phoneNumber);
+          console.log('Postal Code:', postalCode);
+
+          //this.router.navigate(['/tabs/home']);
+
         },
         error: async (error) => {
+           //Handle error
           console.error('An error occurred:', error);
           await loading.dismiss();
           (document.getElementsByClassName('login-alert')[0]as HTMLElement).style.display = "block";
-          // Handle error
         }
       });
     } else {

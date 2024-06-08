@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserDataService } from '../../services/user-data.service';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../../explore-container/explore-container.component';
@@ -11,14 +13,25 @@ import { shieldHalfOutline, documentText } from 'ionicons/icons';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ButtonComponent, IonIcon],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ButtonComponent, IonIcon, CommonModule],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   usuario: string = 'Usuário';
+  showCheckComplaints: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private userDataService: UserDataService, private router: Router) {
     addIcons({ shieldHalfOutline, documentText });
+  }
+
+  ngOnInit() {
+    if (this.userDataService.firstName) {
+      this.usuario = this.userDataService.firstName;
+    }
+    if (this.userDataService.userType == 'teacher') {
+    console.log(this.userDataService.userType);
+    this.showCheckComplaints = true;
+    }
   }
 
   goToDenuncia () {
