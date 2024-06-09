@@ -15,6 +15,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } 
   providers: [DataApiService],
   imports: [IonContent, IonTabButton, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ButtonComponent, ReactiveFormsModule]
 })
+
 export class DenunciaPage implements OnInit {
 
   complaintForm: FormGroup;

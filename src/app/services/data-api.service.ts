@@ -9,14 +9,15 @@ export class DataApiService {
 
   constructor(private httpClient: HttpClient) { }
   getDataAPIService(url: string): Observable<any> {
-    //const params = { educationalInstitution: institution }; // Aceita instituição como filtro.
-    //return this.httpClient.get(url, { params });
-    return this.httpClient.get(url);
+    const apiUrl = url; // Prepend '/api' to the URL
+    console.log('In getDataAPIService', apiUrl);
+    return this.httpClient.get(apiUrl);
   }
 
   postDataAPIService(url: string, data: any): Observable<any> {
-    console.log('In postDataAPIService', url, data)
-    return this.httpClient.post(url, data);
+    const apiUrl = url; // No need to prepend '/api' // Prepend '/api' to the URL
+    console.log('In postDataAPIService', apiUrl, data);
+    return this.httpClient.post(apiUrl, data);
   }
 
 }

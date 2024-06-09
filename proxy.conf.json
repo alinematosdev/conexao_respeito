@@ -1,7 +1,11 @@
 {
   "/api": {
-    "target": "http://193.203.174.161:8082/v1/bff/involved/student/registration1",
+    "target": "https://193.203.174.161:8082",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "onProxyRes": "function(proxyRes, req, res) { proxyRes.headers['Strict-Transport-Security'] = 'off'; }"
+    }
   }
-}

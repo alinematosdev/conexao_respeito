@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent} from '../../components/button/button.component';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro-estudante',
@@ -15,7 +16,7 @@ export class CadastroEstudantePage implements OnInit {
 
   studentForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router) {
+  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router, private loadingController: LoadingController) {
       this.studentForm = this.fb.group({
         fullname: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
@@ -69,15 +70,23 @@ export class CadastroEstudantePage implements OnInit {
     input.type = 'date';
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.studentForm.valid) {
       console.log('form valido');
       const formData = this.studentForm.value;
-      const url = 'http://193.203.174.161:8082/v1/bff/involved/student';
+      const url = 'https://193.203.174.161:8082/v1/bff/involved/student'; // Absolute URL
+
+      const loading = await this.loadingController.create({
+        message: 'Please wait...',
+        spinner: 'circles'
+      });
+
+      await loading.present();
 
       this.dataApiService.postDataAPIService(url, formData).subscribe({
-        next: (response) => {
+        next: async (response) => {
           console.log('Form submitted successfully:', response);
+          await loading.dismiss();
           this.router.navigate(['/login']);
           // Handle successful response
         },
