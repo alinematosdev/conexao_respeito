@@ -57,29 +57,15 @@ export class ConteudoDenunciaPage implements OnInit {
 
 // Update fetchComplaints method
 async fetchComplaints() {
-  const urlBase = 'http://193.203.174.161:8082/v1/bff/complaint/';
-  const limit = 10; // Maximum complaint ID to fetch
-  const complaintsPromises: Promise<any>[] = [];
+  const urlBase = 'https://193.203.174.161:8082/v1/bff/complaint/educational-institution?educationalInstitution=Uninassau';
+  const complaintsData = await this.dataApiService.getDataAPIService(urlBase).toPromise();
 
-  for (let i = 1; i <= limit; i++) {
-    const url = urlBase + i;
-    const promise = this.dataApiService.getDataAPIService(url).toPromise();
-    complaintsPromises.push(promise);
-  }
-
-  Promise.all(complaintsPromises.map(p => p.catch(e => undefined)))
-  .then(complaintsData => {
-    // Remove undefined values (rejected promises) from the array
-    complaintsData = complaintsData.filter(data => data !== undefined);
-    // Concatenate arrays using spread operator
-    this.complaintsData = [].concat(...complaintsData);
-    // Filter complaints based on the selected educational institution
-    this.complaintsData = this.complaintsData.filter((complaint: any) => complaint.educationalInstitution === this.educationalInstitution);
+  if (complaintsData) {
+    this.complaintsData = complaintsData;
     console.log(this.complaintsData);
-    }).catch(error => {
-    // Log rejected promises
-    console.error('Rejected promises:', error);
-  });
+  } else {
+    console.error('Error fetching complaints');
+  }
 }
 
   async mostrarDenuncia(complaint: any) {
