@@ -18,6 +18,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } 
 
 export class DenunciaPage implements OnInit {
 
+  cpf : string = '08874223064'
   complaintForm: FormGroup;
 
   constructor(private dataApiService: DataApiService, private fb: FormBuilder, private location: Location) {
@@ -41,7 +42,7 @@ export class DenunciaPage implements OnInit {
     if (this.complaintForm.valid) {
       console.log('form valido');
       const formData = this.complaintForm.value;
-      const url = 'http://193.203.174.161:8082/v1/bff/complaint/708042994';
+      const url = `https://193.203.174.161:8082/v1/bff/complaint/${this.cpf}`;
 
       this.dataApiService.postDataAPIService(url, formData).subscribe({
         next: (response) => {

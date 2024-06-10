@@ -22,12 +22,12 @@ import { LoadingController } from '@ionic/angular';
 export class ConteudoDenunciaPage implements OnInit {
 
   complaintsData: any[] = [];
-  educationalInstitution: string = '';
+  educationalInstitution: string = 'Uninassau';
 
   constructor(private userDataService: UserDataService, private location: Location, private modalController: ModalController, private dataApiService: DataApiService, private loadingController: LoadingController) { }
 
   async ngOnInit() {
-    this.educationalInstitution = this.userDataService.educationalInstitution;
+    //this.educationalInstitution = this.userDataService.educationalInstitution;
     const loading = await this.loadingController.create({
       message: 'Please wait...',
       spinner: 'circles'
@@ -57,7 +57,8 @@ export class ConteudoDenunciaPage implements OnInit {
 
 // Update fetchComplaints method
 async fetchComplaints() {
-  const urlBase = 'https://193.203.174.161:8082/v1/bff/complaint/educational-institution?educationalInstitution=Uninassau';
+  console.log(this.educationalInstitution);
+  const urlBase = `https://193.203.174.161:8082/v1/bff/complaint/educational-institution?educationalInstitution=${this.educationalInstitution}`;
   const complaintsData = await this.dataApiService.getDataAPIService(urlBase).toPromise();
 
   if (complaintsData) {

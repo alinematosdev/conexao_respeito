@@ -25,7 +25,7 @@ export class PessoasPage implements OnInit {
 
   studentsData: any[] = [];
   submittedDate: string = ''; // Guarda o valor da data inserida.
-  educationalInstitution: string = ''; //Variável que define a instituição.
+  educationalInstitution: string = 'Uninassau'; //Variável que define a instituição.
   student: any;
   showAvaliarButton: boolean = false;
 
@@ -44,12 +44,12 @@ export class PessoasPage implements OnInit {
       }
 
     console.log(this.userDataService.educationalInstitution);
-    this.educationalInstitution = this.userDataService.educationalInstitution;
+    //this.educationalInstitution = this.userDataService.educationalInstitution;
     this.fetchStudents();
   }
 
   async fetchStudents() {
-    const url = `http://193.203.174.161:8082/v1/bff/involved/student/educational-institution?educationalInstitution=${this.educationalInstitution}&size=10&page=0`;
+    const url = `https://193.203.174.161:8082/v1/bff/involved/student/educational-institution?educationalInstitution=${this.educationalInstitution}&size=10&page=0`;
     // Pass educationalInstitution parameter for filtering
     this.dataApiService.getDataAPIService(url).subscribe({
       next: (data) => {
