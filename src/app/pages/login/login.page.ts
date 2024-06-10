@@ -55,18 +55,18 @@ export class LoginPage implements OnInit {
             this.userDataService.firstName = response.fullname.split(' ')[0];
             this.userDataService.nameResponsible = response.nameResponsible;
             this.userDataService.educationalInstitution = response.educationalInstitution;
-            console.log(response.educationalIntitution);
+            console.log('Instituição',response.educationalIntitution);
           } else if (response.hasOwnProperty('nameTutoredStudent')) {
             this.userDataService.userType = 'responsible';
             this.userDataService.firstName = response.fullname.split(' ')[0];
             this.userDataService.nameTutoredStudent = response.nameTutoredStudent;
             this.userDataService.educationalInstitution = response.educationalIntitution;
-            console.log(response.educationalIntitution);
+            console.log('Instituição',response.educationalIntitution);
           } else {
             this.userDataService.userType = 'teacher';
             this.userDataService.firstName = response.fullname.split(' ')[0];
             this.userDataService.educationalInstitution = response.educationalIntitution;
-            console.log(response.educationalIntitution);
+            console.log('Instituição',response.educationalIntitution);
           }
 
           //Grava os dados do usuário

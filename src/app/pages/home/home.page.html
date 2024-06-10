@@ -7,8 +7,14 @@
 
 <ion-content [fullscreen]="true" class="tab1">
 
+  <div class="logout-button">
+    <app-button btnType="logout"></app-button>
+  </div>
+
   <div *ngIf="showCheckComplaints" id="check-complaints" class="teacher-button-container">
     <label>Denúncias</label>
+
+    <!--Botão de visualizar denúncias, visível apenas para professores.-->
     <button (click)="goToConteudoDenuncia()">
       <ion-icon name="document-text" class="check-complaint-icon"></ion-icon>
       <ion-icon name="document-text" class="check-complaint-icon-shadow"></ion-icon>

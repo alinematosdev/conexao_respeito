@@ -99,6 +99,26 @@ h2 {
   border-radius: 100px;
 }
 
+.logout-button {
+  top: 4px;
+  left: 2px;
+  font-size: 10px;
+}
+
+.logout-button {
+  position: absolute;
+  background-color: #ada6c5;
+  border-radius: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 15px;
+  left: 8px;
+  font-size: 30px;
+}
+
+
 /*.div-text {
   margin-left: 30px;
 }*/

@@ -7,5 +7,10 @@
       <ion-icon name="alert-circle-outline"></ion-icon>
     </div>
   </ng-container>
+  <ng-container *ngIf="btnType === 'logout'">
+    <div>
+      <ion-icon name="log-out-outline"></ion-icon>
+    </div>
+  </ng-container>
   {{ btnText }}
 </button>

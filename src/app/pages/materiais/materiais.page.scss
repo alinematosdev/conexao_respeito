@@ -1,11 +1,11 @@
-ion-content{
+ion-content, .PaginaMateriais {
   --ion-background-color: linear-gradient( #9465f8, #a783fc, #baa0fe, #cebdff, #e2d9ff, #ebe6ff, #f5f2ff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-h1 {
+h3, .Materiais {
   color: #ffffff;
   margin-top: 40px;
   margin-left: 30px;

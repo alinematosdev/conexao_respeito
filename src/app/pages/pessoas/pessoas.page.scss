@@ -1,23 +1,24 @@
-ion-content{
+ion-content, .PaginaPessoa{
   --ion-background-color: #ffffff;
   align-items: center;
   justify-content: center;
   display: flex;
 }
-
-h1, .student-box p {
+.student-box p {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
 }
 
-  h1 {
+  h1, .PessoaTitulo  {
+  font-family: "Outfit", sans-serif;
   color: #333333;
   margin-top: 87px;
   margin-left: 30px;
   font-size: 28px;
+  font-weight: 400;
   }
 
-  h2 {
+  h2{
   color: #9465f8;
   margin-top: 20px;
   margin-left: 30px;
@@ -47,7 +48,7 @@ h1, .student-box p {
     position: relative;
   }
 
-  .student-name h1 {
+  .student-name h1  {
     margin: 38px 5px auto;
     font-size: 15px;
     font-weight: 600;
@@ -110,5 +111,4 @@ h1, .student-box p {
     padding: 3px;
     position: absolute;
   }
-
 

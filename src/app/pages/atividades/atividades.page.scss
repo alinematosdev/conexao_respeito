@@ -1,4 +1,4 @@
-ion-content{
+.atividades-content{
   --ion-background-color: linear-gradient(to bottom, #9465f8, #9465f8, #9465f8, #9465f8, #9465f8, #8f63f8, #8960f8, #835ef8, #755af8, #6455f8, #5052f9, #344ef9);
   align-items: center;
   justify-content: center;
@@ -148,7 +148,7 @@ h1, .activities-container p {
   }
 
   .delete-icon {
-    display: none;
+    //display: none;
     position: absolute;
     right: 10px;
     bottom: 2px;

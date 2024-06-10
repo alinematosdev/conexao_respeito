@@ -41,6 +41,7 @@ export class AtividadesPage implements OnInit {
   }
 
   ngOnInit() {
+    this.userDataService.userType = 'teacher';
 
     if (this.userDataService.userType == 'teacher') {
       this.containerMessage = 'Adicionar Atividade';

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { HostBinding } from '@angular/core';
-import { arrowBackOutline, alertCircleOutline, warningOutline } from 'ionicons/icons';
+import { arrowBackOutline, alertCircleOutline, warningOutline, logOutOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-button',
@@ -14,12 +14,12 @@ import { arrowBackOutline, alertCircleOutline, warningOutline } from 'ionicons/i
 })
 export class ButtonComponent  implements OnInit {
 
-  @Input() btnType: 'primary' | 'secondary' | 'transparent' | 'back' | 'add' | 'complaint' = 'primary';
+  @Input() btnType: 'primary' | 'secondary' | 'transparent' | 'back' | 'add' | 'complaint' | 'logout' = 'primary';
 
   @Input() btnText: string = '';
 
   constructor() {
-    addIcons({ arrowBackOutline, alertCircleOutline, warningOutline });
+    addIcons({ arrowBackOutline, alertCircleOutline, warningOutline, logOutOutline });
   }
   ngOnInit() {
   }
