@@ -58,7 +58,7 @@ export class ConteudoDenunciaPage implements OnInit {
 // Update fetchComplaints method
 async fetchComplaints() {
   console.log(this.educationalInstitution);
-  const urlBase = `https://193.203.174.161:8082/v1/bff/complaint/educational-institution?educationalInstitution=${this.educationalInstitution}`;
+  const urlBase = `http://193.203.174.161:8082/v1/bff/complaint/educational-institution?educationalInstitution=${this.educationalInstitution}`;
   const complaintsData = await this.dataApiService.getDataAPIService(urlBase).toPromise();
 
   if (complaintsData) {

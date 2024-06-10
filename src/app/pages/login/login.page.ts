@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
     if (this.loginForm.valid) {
       console.log('form valido');
       const formData = this.loginForm.value;
-      const url = 'https://193.203.174.161:8082/v1/bff/involved/auth/login';
+      const url = 'http://193.203.174.161:8082/v1/bff/involved/auth/login';
 
       const loading = await this.loadingController.create({
         message: 'Please wait...',

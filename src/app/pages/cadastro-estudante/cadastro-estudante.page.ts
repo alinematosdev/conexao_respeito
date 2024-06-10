@@ -74,7 +74,7 @@ export class CadastroEstudantePage implements OnInit {
     if (this.studentForm.valid) {
       console.log('form valido');
       const formData = this.studentForm.value;
-      const url = 'https://193.203.174.161:8082/v1/bff/involved/student'; // Absolute URL
+      const url = 'http://193.203.174.161:8082/v1/bff/involved/student'; // Absolute URL
 
       const loading = await this.loadingController.create({
         message: 'Please wait...',
