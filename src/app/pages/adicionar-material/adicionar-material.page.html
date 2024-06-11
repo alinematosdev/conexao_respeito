@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form>
+  <form method="POST" [formGroup]="materialForm" (ngSubmit)="onSubmit()" class="form-inputs">
     <div class="form-group">
       <label for="material-media">Endereço de vídeo ou imagem</label>
       <input class="inputFile" type="text" id="material-media" name="material-media" placeholder="Endereço de vídeo/imagem">
@@ -18,7 +18,7 @@
       <label for="material-files">Material de apoio</label>
       <input class="inputFile" type="file" id="material-files" name="material-files" accept=".pdf">
       <div class="button-container">
-        <button (click)="onClick()">
+        <button type="submit">
           <span class="button_text">Adicionar Material</span>
         </button>
       </div>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -15,9 +15,14 @@ export class DataApiService {
   }
 
   postDataAPIService(url: string, data: any): Observable<any> {
+
+    const headers = new HttpHeaders();
+
+    return this.httpClient.post(url, data, { headers });
+
     const apiUrl = url; // No need to prepend '/api' // Prepend '/api' to the URL
-    console.log('In postDataAPIService', apiUrl, data);
-    return this.httpClient.post(apiUrl, data);
+    /*console.log('In postDataAPIService', apiUrl, data);
+    return this.httpClient.post(url, data, options);*/
   }
 
 }

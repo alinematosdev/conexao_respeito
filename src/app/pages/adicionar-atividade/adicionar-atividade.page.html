@@ -10,14 +10,14 @@
 
 <ion-content [fullscreen]="true">
 
-  <form>
+  <form method="POST" [formGroup]="activityForm" (ngSubmit)="onSubmit()" class="form-inputs" enctype="multipart/form-data">
     <div class="form-group">
       <label for="atividade-title">Título da atividade</label>
       <input class="inputFile" type="text" id="atividade-title" name="atividade-title" placeholder="Título da atividade">
       <label for="atividade-files">Atividade</label>
-      <input class="inputFile" type="file" id="atividade-files" name="atividade-files" accept=".pdf">
+      <input formControlName="filePath" class="inputFile" type="file" id="atividade-files" name="atividade-files" accept=".pdf">
       <div class="button-container">
-        <button (click)="onClick()">
+        <button type="submit">
           <span class="button_text">Adicionar Atividade</span>
         </button>
       </div>

@@ -33,6 +33,7 @@ export class PessoasPage implements OnInit {
   }
 
   ngOnInit() {
+    this.userDataService.userType = 'teacher';
     if (this.userDataService.userType == 'teacher') {
       this.showAvaliarButton = true;
       } else if (this.userDataService.userType == 'student') {
@@ -49,12 +50,14 @@ export class PessoasPage implements OnInit {
   }
 
   async fetchStudents() {
-    const url = `https://193.203.174.161:8082/v1/bff/involved/student/educational-institution?educationalInstitution=${this.educationalInstitution}&size=10&page=0`;
+    const url = `http://193.203.174.161:8082/v1/bff/involved/student/educational-institution?educationalInstitution=${this.educationalInstitution}&size=10&page=0`;
     // Pass educationalInstitution parameter for filtering
     this.dataApiService.getDataAPIService(url).subscribe({
       next: (data) => {
         console.log('Students received successfully:', data);
-        this.studentsData = data.map((student: any) => student.fullname);
+        const filteredData = data.filter((student: any) => student.idStudent > 7);
+        this.studentsData = filteredData.map((student: any) => student.fullname);
+        console.log('Full names:', this.studentsData);
         console.log('Full names:', this.studentsData);
         // Handle successful response
       },
@@ -89,13 +92,18 @@ export class PessoasPage implements OnInit {
     event.preventDefault();
 
     //Valida se a data está indefinida.
-    const dateInput = (document.getElementById('dateInput') as HTMLInputElement).value;
+    const dateInput = (document.querySelector('.dateInput') as HTMLInputElement).value;
     if (!dateInput) {
       //Data está indefinida.
       alert('Data inválida.');
       return;
     } else {
       document.getElementById(assessmentDate)!.style.display = "block";
+      const assessmentDates = document.querySelectorAll('.assessmentDate');
+      assessmentDates.forEach((element) => {
+        console.log('Element:', element);
+        (element as HTMLElement).style.display = "block";
+      });
       document.getElementById('avaliarButton')!.style.display = "none";
       document.getElementById('dateInput')!.style.display = "none";
       document.getElementById('dateSubmit')!.style.display = "none";
@@ -107,6 +115,7 @@ export class PessoasPage implements OnInit {
   }
 
   createStudentBox(student: Student) {
+
     // Create a new div element with the class "student-box"
     const studentBox = document.createElement("div");
     studentBox.className = "pessoa-box";
@@ -120,7 +129,7 @@ export class PessoasPage implements OnInit {
         <button (click)="onClick('dateInput','dateSubmit')">Avaliar</button>
         <form (submit)="iniciarAvaliacao($event, 'assessmentDate')">
           <p id="assessmentDate">Em avaliação até ${student.date}</p>
-          <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" required/>
+          <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" class="dateInput" required/>
           <input type="submit" name="dateSubmit" value="OK" id="dateSubmit">
         </form>
         <!--<input id="dateInput" type="text" name="dateInput" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" title="Data no formato dd/mm/yyyy"/>-->

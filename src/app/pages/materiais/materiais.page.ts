@@ -35,16 +35,16 @@ export class MateriaisPage implements OnInit {
 
   ngOnInit() {
     if (this.userDataService.userType == 'teacher') {
-      this.containerMessage = 'Adicionar Material';
-      this.showIcon = true;
+      this.containerMessage = 'Status do aluno(a) Yury Davis: Em avaliação até 20/06/2024';
+      //this.showIcon = true;
       } else if (this.userDataService.userType == 'student') {
-      this.containerMessage = 'Status do aluno: OK';
+      this.containerMessage = 'Status do aluno(a) Yury Davis: Em avaliação até 20/06/2024';
       this.showIcon = false;
       } else if (this.userDataService.userType == 'responsible') {
       this.containerMessage = 'Status do aluno tutorado: OK';
       this.showIcon = false;
       } else {
-      this.containerMessage = 'Status do aluno: OK';
+      this.containerMessage = 'Status do aluno(a) Yury Davis: Em avaliação até 20/06/2024';
       this.showIcon = false;
       }
 

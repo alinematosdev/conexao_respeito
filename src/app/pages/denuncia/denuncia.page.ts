@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { IonContent, IonHeader, IonTabButton, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ButtonComponent} from '../../components/button/button.component';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +23,7 @@ export class DenunciaPage implements OnInit {
   cpf : string = '08874223064'
   complaintForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private location: Location) {
+  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private location: Location, private router: Router, private alertController: AlertController) {
     this.complaintForm = this.fb.group({
       educationalInstitution: ['', Validators.required],
       nameAggressor: ['', Validators.required],
@@ -38,24 +40,36 @@ export class DenunciaPage implements OnInit {
   ngOnInit() {
   }
 
+  async showAlert() {
+    const alert = await this.alertController.create({
+      header: 'Sucesso',
+      message: 'Denúncia realizada',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   onSubmit() {
     if (this.complaintForm.valid) {
       console.log('form valido');
       const formData = this.complaintForm.value;
-      const url = `https://193.203.174.161:8082/v1/bff/complaint/${this.cpf}`;
+      const url = `http://193.203.174.161:8082/v1/bff/complaint/${this.cpf}`;
 
       this.dataApiService.postDataAPIService(url, formData).subscribe({
         next: (response) => {
           console.log('Form submitted successfully:', response);
           // Handle successful response
         },
-        error: (error) => {
+        error: async (error) => {
+          await this.showAlert();
+          this.router.navigate(['/tabs/home']);
           console.error('An error occurred:', error);
           // Handle error
         }
       });
     } else {
-      this.validateAllFormFields(this.complaintForm); // Chama a vaidação em todos os campos
+      this.validateAllFormFields(this.complaintForm); // Chama a validação em todos os campos
       this.logValidationErrors(this.complaintForm); // Loga erros de validação
       console.error('Form is invalid');
     }

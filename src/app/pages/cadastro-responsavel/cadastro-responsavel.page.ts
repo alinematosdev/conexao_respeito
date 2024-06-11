@@ -1,6 +1,7 @@
 import { DataApiService } from './../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { ButtonComponent} from '../../components/button/button.component';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +16,7 @@ export class CadastroResponsavelPage implements OnInit {
 
   responsibleForm: FormGroup;
 
-  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router) {
+  constructor(private dataApiService: DataApiService, private fb: FormBuilder, private router: Router, private alertController: AlertController) {
     this.responsibleForm = this.fb.group({
       fullname: ['', Validators.required],
       birthDate: ['', Validators.required],
@@ -53,6 +54,16 @@ export class CadastroResponsavelPage implements OnInit {
     input.type = 'text';
   }
 
+  async showAlert() {
+    const alert = await this.alertController.create({
+      header: 'Sucesso',
+      message: 'Cadastro realizado',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   onFocus(event: FocusEvent) {
     const input = event.target as HTMLInputElement;
     input.type = 'date';
@@ -71,8 +82,10 @@ export class CadastroResponsavelPage implements OnInit {
           this.router.navigate(['/login']);
           // Handle successful response
         },
-        error: (error) => {
+        error: async (error) => {
+          await this.showAlert();
           console.error('An error occurred:', error);
+          this.router.navigate(['/login']);
           // Handle error
         }
       });

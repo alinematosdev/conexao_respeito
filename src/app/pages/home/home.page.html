@@ -8,7 +8,8 @@
 <ion-content [fullscreen]="true" class="tab1">
 
   <div class="logout-button">
-    <app-button btnType="logout"></app-button>
+    <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+    <app-button btnType="logout" (click)="goToLogin()"></app-button>
   </div>
 
   <div *ngIf="showCheckComplaints" id="check-complaints" class="teacher-button-container">
@@ -30,7 +31,7 @@
         <h1>Bem vindo</h1>
         <h2>{{ usuario }}</h2>
       </div>
-      <img src="assets\images\CartoonizeAvatar.png" alt="profile-image">
+      <img src="assets\images\user-profile-4255.png" alt="profile-image">
     </div>
     <div class="simple-stroke">
       <hr>

@@ -18,17 +18,17 @@
           <!--Formulário para inserção da data de avaliação-->
           <form (submit)="iniciarAvaliacao($event, 'assessmentDate')">
             <p id="assessmentDate">Em avaliação até {{ submittedDate }}</p>
-            <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" required/>
+            <input type="date" name="dateInput" pattern="\d{2}\/\d{2}\/\d{4}" title="Data no formato dd/mm/yyyy" id="dateInput" class="dateInput" required/>
             <input type="submit" name="dateSubmit" value="OK" id="dateSubmit">
           </form>
         </div>
       </div>
     </div>
-    <div class="student-box">
+    <!--<div class="student-box">
       <div class="student-name">
         <h1>Nome do Aluno</h1>
       </div>
-    </div>
+    </div>-->
 
   </div>
 
